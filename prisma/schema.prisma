@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model County {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  isCoastal   Boolean   @default(false)
+  isBeachPlan Boolean   @default(false)
+  carriers    CarrierCounty[]
+}
+
+model Carrier {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  counties    CarrierCounty[]
+}
+
+model CarrierCounty {
+  id         Int     @id @default(autoincrement())
+  carrierId  Int
+  countyId   Int
+  carrier    Carrier @relation(fields: [carrierId], references: [id])
+  county     County  @relation(fields: [countyId], references: [id])
+
+  @@unique([carrierId, countyId])
+}
