@@ -123,7 +123,6 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.CountyScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  isCoastal: 'isCoastal',
   isBeachPlan: 'isBeachPlan'
 };
 

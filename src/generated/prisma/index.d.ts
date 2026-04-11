@@ -1132,21 +1132,18 @@ export namespace Prisma {
   export type CountyMinAggregateOutputType = {
     id: number | null
     name: string | null
-    isCoastal: boolean | null
     isBeachPlan: boolean | null
   }
 
   export type CountyMaxAggregateOutputType = {
     id: number | null
     name: string | null
-    isCoastal: boolean | null
     isBeachPlan: boolean | null
   }
 
   export type CountyCountAggregateOutputType = {
     id: number
     name: number
-    isCoastal: number
     isBeachPlan: number
     _all: number
   }
@@ -1163,21 +1160,18 @@ export namespace Prisma {
   export type CountyMinAggregateInputType = {
     id?: true
     name?: true
-    isCoastal?: true
     isBeachPlan?: true
   }
 
   export type CountyMaxAggregateInputType = {
     id?: true
     name?: true
-    isCoastal?: true
     isBeachPlan?: true
   }
 
   export type CountyCountAggregateInputType = {
     id?: true
     name?: true
-    isCoastal?: true
     isBeachPlan?: true
     _all?: true
   }
@@ -1271,7 +1265,6 @@ export namespace Prisma {
   export type CountyGroupByOutputType = {
     id: number
     name: string
-    isCoastal: boolean
     isBeachPlan: boolean
     _count: CountyCountAggregateOutputType | null
     _avg: CountyAvgAggregateOutputType | null
@@ -1297,7 +1290,6 @@ export namespace Prisma {
   export type CountySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    isCoastal?: boolean
     isBeachPlan?: boolean
     carriers?: boolean | County$carriersArgs<ExtArgs>
     _count?: boolean | CountyCountOutputTypeDefaultArgs<ExtArgs>
@@ -1306,25 +1298,22 @@ export namespace Prisma {
   export type CountySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    isCoastal?: boolean
     isBeachPlan?: boolean
   }, ExtArgs["result"]["county"]>
 
   export type CountySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    isCoastal?: boolean
     isBeachPlan?: boolean
   }, ExtArgs["result"]["county"]>
 
   export type CountySelectScalar = {
     id?: boolean
     name?: boolean
-    isCoastal?: boolean
     isBeachPlan?: boolean
   }
 
-  export type CountyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "isCoastal" | "isBeachPlan", ExtArgs["result"]["county"]>
+  export type CountyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "isBeachPlan", ExtArgs["result"]["county"]>
   export type CountyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     carriers?: boolean | County$carriersArgs<ExtArgs>
     _count?: boolean | CountyCountOutputTypeDefaultArgs<ExtArgs>
@@ -1340,7 +1329,6 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       name: string
-      isCoastal: boolean
       isBeachPlan: boolean
     }, ExtArgs["result"]["county"]>
     composites: {}
@@ -1768,7 +1756,6 @@ export namespace Prisma {
   interface CountyFieldRefs {
     readonly id: FieldRef<"County", 'Int'>
     readonly name: FieldRef<"County", 'String'>
-    readonly isCoastal: FieldRef<"County", 'Boolean'>
     readonly isBeachPlan: FieldRef<"County", 'Boolean'>
   }
     
@@ -4379,7 +4366,6 @@ export namespace Prisma {
   export const CountyScalarFieldEnum: {
     id: 'id',
     name: 'name',
-    isCoastal: 'isCoastal',
     isBeachPlan: 'isBeachPlan'
   };
 
@@ -4482,7 +4468,6 @@ export namespace Prisma {
     NOT?: CountyWhereInput | CountyWhereInput[]
     id?: IntFilter<"County"> | number
     name?: StringFilter<"County"> | string
-    isCoastal?: BoolFilter<"County"> | boolean
     isBeachPlan?: BoolFilter<"County"> | boolean
     carriers?: CarrierCountyListRelationFilter
   }
@@ -4490,7 +4475,6 @@ export namespace Prisma {
   export type CountyOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
-    isCoastal?: SortOrder
     isBeachPlan?: SortOrder
     carriers?: CarrierCountyOrderByRelationAggregateInput
   }
@@ -4501,7 +4485,6 @@ export namespace Prisma {
     AND?: CountyWhereInput | CountyWhereInput[]
     OR?: CountyWhereInput[]
     NOT?: CountyWhereInput | CountyWhereInput[]
-    isCoastal?: BoolFilter<"County"> | boolean
     isBeachPlan?: BoolFilter<"County"> | boolean
     carriers?: CarrierCountyListRelationFilter
   }, "id" | "name">
@@ -4509,7 +4492,6 @@ export namespace Prisma {
   export type CountyOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
-    isCoastal?: SortOrder
     isBeachPlan?: SortOrder
     _count?: CountyCountOrderByAggregateInput
     _avg?: CountyAvgOrderByAggregateInput
@@ -4524,7 +4506,6 @@ export namespace Prisma {
     NOT?: CountyScalarWhereWithAggregatesInput | CountyScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"County"> | number
     name?: StringWithAggregatesFilter<"County"> | string
-    isCoastal?: BoolWithAggregatesFilter<"County"> | boolean
     isBeachPlan?: BoolWithAggregatesFilter<"County"> | boolean
   }
 
@@ -4623,7 +4604,6 @@ export namespace Prisma {
 
   export type CountyCreateInput = {
     name: string
-    isCoastal?: boolean
     isBeachPlan?: boolean
     carriers?: CarrierCountyCreateNestedManyWithoutCountyInput
   }
@@ -4631,14 +4611,12 @@ export namespace Prisma {
   export type CountyUncheckedCreateInput = {
     id?: number
     name: string
-    isCoastal?: boolean
     isBeachPlan?: boolean
     carriers?: CarrierCountyUncheckedCreateNestedManyWithoutCountyInput
   }
 
   export type CountyUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
-    isCoastal?: BoolFieldUpdateOperationsInput | boolean
     isBeachPlan?: BoolFieldUpdateOperationsInput | boolean
     carriers?: CarrierCountyUpdateManyWithoutCountyNestedInput
   }
@@ -4646,7 +4624,6 @@ export namespace Prisma {
   export type CountyUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    isCoastal?: BoolFieldUpdateOperationsInput | boolean
     isBeachPlan?: BoolFieldUpdateOperationsInput | boolean
     carriers?: CarrierCountyUncheckedUpdateManyWithoutCountyNestedInput
   }
@@ -4654,20 +4631,17 @@ export namespace Prisma {
   export type CountyCreateManyInput = {
     id?: number
     name: string
-    isCoastal?: boolean
     isBeachPlan?: boolean
   }
 
   export type CountyUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
-    isCoastal?: BoolFieldUpdateOperationsInput | boolean
     isBeachPlan?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type CountyUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    isCoastal?: BoolFieldUpdateOperationsInput | boolean
     isBeachPlan?: BoolFieldUpdateOperationsInput | boolean
   }
 
@@ -4789,7 +4763,6 @@ export namespace Prisma {
   export type CountyCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    isCoastal?: SortOrder
     isBeachPlan?: SortOrder
   }
 
@@ -4800,14 +4773,12 @@ export namespace Prisma {
   export type CountyMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    isCoastal?: SortOrder
     isBeachPlan?: SortOrder
   }
 
   export type CountyMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    isCoastal?: SortOrder
     isBeachPlan?: SortOrder
   }
 
@@ -5230,14 +5201,12 @@ export namespace Prisma {
 
   export type CountyCreateWithoutCarriersInput = {
     name: string
-    isCoastal?: boolean
     isBeachPlan?: boolean
   }
 
   export type CountyUncheckedCreateWithoutCarriersInput = {
     id?: number
     name: string
-    isCoastal?: boolean
     isBeachPlan?: boolean
   }
 
@@ -5279,14 +5248,12 @@ export namespace Prisma {
 
   export type CountyUpdateWithoutCarriersInput = {
     name?: StringFieldUpdateOperationsInput | string
-    isCoastal?: BoolFieldUpdateOperationsInput | boolean
     isBeachPlan?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type CountyUncheckedUpdateWithoutCarriersInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    isCoastal?: BoolFieldUpdateOperationsInput | boolean
     isBeachPlan?: BoolFieldUpdateOperationsInput | boolean
   }
 
