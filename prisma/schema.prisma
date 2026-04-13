@@ -16,17 +16,30 @@ model County {
 }
 
 model Carrier {
-  id          Int       @id @default(autoincrement())
-  name        String    @unique
-  counties    CarrierCounty[]
+  id        Int             @id @default(autoincrement())
+  name      String          @unique
+  amBest    String
+  type      String          @default("Admitted")
+  website   String?
+  counties  CarrierCounty[]
 }
 
 model CarrierCounty {
-  id         Int     @id @default(autoincrement())
-  carrierId  Int
-  countyId   Int
-  carrier    Carrier @relation(fields: [carrierId], references: [id])
-  county     County  @relation(fields: [countyId], references: [id])
+  id                 Int      @id @default(autoincrement())
+  carrierId          Int
+  countyId           Int
+  carrier            Carrier  @relation(fields: [carrierId], references: [id])
+  county             County   @relation(fields: [countyId], references: [id])
+
+  appetiteLevel      String
+  windHailStance     String
+  windHailDetail     String?
+  minDwelling        Int?
+  constructionNote   String?
+  maxProtectionClass Int?
+  uwNotes            String?
+  updatedAt          DateTime @updatedAt
 
   @@unique([carrierId, countyId])
+  @@index([countyId])
 }
