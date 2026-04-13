@@ -128,13 +128,24 @@ exports.Prisma.CountyScalarFieldEnum = {
 
 exports.Prisma.CarrierScalarFieldEnum = {
   id: 'id',
-  name: 'name'
+  name: 'name',
+  amBest: 'amBest',
+  type: 'type',
+  website: 'website'
 };
 
 exports.Prisma.CarrierCountyScalarFieldEnum = {
   id: 'id',
   carrierId: 'carrierId',
-  countyId: 'countyId'
+  countyId: 'countyId',
+  appetiteLevel: 'appetiteLevel',
+  windHailStance: 'windHailStance',
+  windHailDetail: 'windHailDetail',
+  minDwelling: 'minDwelling',
+  constructionNote: 'constructionNote',
+  maxProtectionClass: 'maxProtectionClass',
+  uwNotes: 'uwNotes',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {
@@ -145,6 +156,11 @@ exports.Prisma.SortOrder = {
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 
 

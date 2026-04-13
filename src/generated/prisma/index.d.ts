@@ -2215,16 +2215,25 @@ export namespace Prisma {
   export type CarrierMinAggregateOutputType = {
     id: number | null
     name: string | null
+    amBest: string | null
+    type: string | null
+    website: string | null
   }
 
   export type CarrierMaxAggregateOutputType = {
     id: number | null
     name: string | null
+    amBest: string | null
+    type: string | null
+    website: string | null
   }
 
   export type CarrierCountAggregateOutputType = {
     id: number
     name: number
+    amBest: number
+    type: number
+    website: number
     _all: number
   }
 
@@ -2240,16 +2249,25 @@ export namespace Prisma {
   export type CarrierMinAggregateInputType = {
     id?: true
     name?: true
+    amBest?: true
+    type?: true
+    website?: true
   }
 
   export type CarrierMaxAggregateInputType = {
     id?: true
     name?: true
+    amBest?: true
+    type?: true
+    website?: true
   }
 
   export type CarrierCountAggregateInputType = {
     id?: true
     name?: true
+    amBest?: true
+    type?: true
+    website?: true
     _all?: true
   }
 
@@ -2342,6 +2360,9 @@ export namespace Prisma {
   export type CarrierGroupByOutputType = {
     id: number
     name: string
+    amBest: string
+    type: string
+    website: string | null
     _count: CarrierCountAggregateOutputType | null
     _avg: CarrierAvgAggregateOutputType | null
     _sum: CarrierSumAggregateOutputType | null
@@ -2366,6 +2387,9 @@ export namespace Prisma {
   export type CarrierSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    amBest?: boolean
+    type?: boolean
+    website?: boolean
     counties?: boolean | Carrier$countiesArgs<ExtArgs>
     _count?: boolean | CarrierCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["carrier"]>
@@ -2373,19 +2397,28 @@ export namespace Prisma {
   export type CarrierSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    amBest?: boolean
+    type?: boolean
+    website?: boolean
   }, ExtArgs["result"]["carrier"]>
 
   export type CarrierSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    amBest?: boolean
+    type?: boolean
+    website?: boolean
   }, ExtArgs["result"]["carrier"]>
 
   export type CarrierSelectScalar = {
     id?: boolean
     name?: boolean
+    amBest?: boolean
+    type?: boolean
+    website?: boolean
   }
 
-  export type CarrierOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name", ExtArgs["result"]["carrier"]>
+  export type CarrierOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "amBest" | "type" | "website", ExtArgs["result"]["carrier"]>
   export type CarrierInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     counties?: boolean | Carrier$countiesArgs<ExtArgs>
     _count?: boolean | CarrierCountOutputTypeDefaultArgs<ExtArgs>
@@ -2401,6 +2434,9 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       name: string
+      amBest: string
+      type: string
+      website: string | null
     }, ExtArgs["result"]["carrier"]>
     composites: {}
   }
@@ -2827,6 +2863,9 @@ export namespace Prisma {
   interface CarrierFieldRefs {
     readonly id: FieldRef<"Carrier", 'Int'>
     readonly name: FieldRef<"Carrier", 'String'>
+    readonly amBest: FieldRef<"Carrier", 'String'>
+    readonly type: FieldRef<"Carrier", 'String'>
+    readonly website: FieldRef<"Carrier", 'String'>
   }
     
 
@@ -3278,30 +3317,58 @@ export namespace Prisma {
     id: number | null
     carrierId: number | null
     countyId: number | null
+    minDwelling: number | null
+    maxProtectionClass: number | null
   }
 
   export type CarrierCountySumAggregateOutputType = {
     id: number | null
     carrierId: number | null
     countyId: number | null
+    minDwelling: number | null
+    maxProtectionClass: number | null
   }
 
   export type CarrierCountyMinAggregateOutputType = {
     id: number | null
     carrierId: number | null
     countyId: number | null
+    appetiteLevel: string | null
+    windHailStance: string | null
+    windHailDetail: string | null
+    minDwelling: number | null
+    constructionNote: string | null
+    maxProtectionClass: number | null
+    uwNotes: string | null
+    updatedAt: Date | null
   }
 
   export type CarrierCountyMaxAggregateOutputType = {
     id: number | null
     carrierId: number | null
     countyId: number | null
+    appetiteLevel: string | null
+    windHailStance: string | null
+    windHailDetail: string | null
+    minDwelling: number | null
+    constructionNote: string | null
+    maxProtectionClass: number | null
+    uwNotes: string | null
+    updatedAt: Date | null
   }
 
   export type CarrierCountyCountAggregateOutputType = {
     id: number
     carrierId: number
     countyId: number
+    appetiteLevel: number
+    windHailStance: number
+    windHailDetail: number
+    minDwelling: number
+    constructionNote: number
+    maxProtectionClass: number
+    uwNotes: number
+    updatedAt: number
     _all: number
   }
 
@@ -3310,30 +3377,58 @@ export namespace Prisma {
     id?: true
     carrierId?: true
     countyId?: true
+    minDwelling?: true
+    maxProtectionClass?: true
   }
 
   export type CarrierCountySumAggregateInputType = {
     id?: true
     carrierId?: true
     countyId?: true
+    minDwelling?: true
+    maxProtectionClass?: true
   }
 
   export type CarrierCountyMinAggregateInputType = {
     id?: true
     carrierId?: true
     countyId?: true
+    appetiteLevel?: true
+    windHailStance?: true
+    windHailDetail?: true
+    minDwelling?: true
+    constructionNote?: true
+    maxProtectionClass?: true
+    uwNotes?: true
+    updatedAt?: true
   }
 
   export type CarrierCountyMaxAggregateInputType = {
     id?: true
     carrierId?: true
     countyId?: true
+    appetiteLevel?: true
+    windHailStance?: true
+    windHailDetail?: true
+    minDwelling?: true
+    constructionNote?: true
+    maxProtectionClass?: true
+    uwNotes?: true
+    updatedAt?: true
   }
 
   export type CarrierCountyCountAggregateInputType = {
     id?: true
     carrierId?: true
     countyId?: true
+    appetiteLevel?: true
+    windHailStance?: true
+    windHailDetail?: true
+    minDwelling?: true
+    constructionNote?: true
+    maxProtectionClass?: true
+    uwNotes?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -3427,6 +3522,14 @@ export namespace Prisma {
     id: number
     carrierId: number
     countyId: number
+    appetiteLevel: string
+    windHailStance: string
+    windHailDetail: string | null
+    minDwelling: number | null
+    constructionNote: string | null
+    maxProtectionClass: number | null
+    uwNotes: string | null
+    updatedAt: Date
     _count: CarrierCountyCountAggregateOutputType | null
     _avg: CarrierCountyAvgAggregateOutputType | null
     _sum: CarrierCountySumAggregateOutputType | null
@@ -3452,6 +3555,14 @@ export namespace Prisma {
     id?: boolean
     carrierId?: boolean
     countyId?: boolean
+    appetiteLevel?: boolean
+    windHailStance?: boolean
+    windHailDetail?: boolean
+    minDwelling?: boolean
+    constructionNote?: boolean
+    maxProtectionClass?: boolean
+    uwNotes?: boolean
+    updatedAt?: boolean
     carrier?: boolean | CarrierDefaultArgs<ExtArgs>
     county?: boolean | CountyDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["carrierCounty"]>
@@ -3460,6 +3571,14 @@ export namespace Prisma {
     id?: boolean
     carrierId?: boolean
     countyId?: boolean
+    appetiteLevel?: boolean
+    windHailStance?: boolean
+    windHailDetail?: boolean
+    minDwelling?: boolean
+    constructionNote?: boolean
+    maxProtectionClass?: boolean
+    uwNotes?: boolean
+    updatedAt?: boolean
     carrier?: boolean | CarrierDefaultArgs<ExtArgs>
     county?: boolean | CountyDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["carrierCounty"]>
@@ -3468,6 +3587,14 @@ export namespace Prisma {
     id?: boolean
     carrierId?: boolean
     countyId?: boolean
+    appetiteLevel?: boolean
+    windHailStance?: boolean
+    windHailDetail?: boolean
+    minDwelling?: boolean
+    constructionNote?: boolean
+    maxProtectionClass?: boolean
+    uwNotes?: boolean
+    updatedAt?: boolean
     carrier?: boolean | CarrierDefaultArgs<ExtArgs>
     county?: boolean | CountyDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["carrierCounty"]>
@@ -3476,9 +3603,17 @@ export namespace Prisma {
     id?: boolean
     carrierId?: boolean
     countyId?: boolean
+    appetiteLevel?: boolean
+    windHailStance?: boolean
+    windHailDetail?: boolean
+    minDwelling?: boolean
+    constructionNote?: boolean
+    maxProtectionClass?: boolean
+    uwNotes?: boolean
+    updatedAt?: boolean
   }
 
-  export type CarrierCountyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "carrierId" | "countyId", ExtArgs["result"]["carrierCounty"]>
+  export type CarrierCountyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "carrierId" | "countyId" | "appetiteLevel" | "windHailStance" | "windHailDetail" | "minDwelling" | "constructionNote" | "maxProtectionClass" | "uwNotes" | "updatedAt", ExtArgs["result"]["carrierCounty"]>
   export type CarrierCountyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     carrier?: boolean | CarrierDefaultArgs<ExtArgs>
     county?: boolean | CountyDefaultArgs<ExtArgs>
@@ -3502,6 +3637,14 @@ export namespace Prisma {
       id: number
       carrierId: number
       countyId: number
+      appetiteLevel: string
+      windHailStance: string
+      windHailDetail: string | null
+      minDwelling: number | null
+      constructionNote: string | null
+      maxProtectionClass: number | null
+      uwNotes: string | null
+      updatedAt: Date
     }, ExtArgs["result"]["carrierCounty"]>
     composites: {}
   }
@@ -3930,6 +4073,14 @@ export namespace Prisma {
     readonly id: FieldRef<"CarrierCounty", 'Int'>
     readonly carrierId: FieldRef<"CarrierCounty", 'Int'>
     readonly countyId: FieldRef<"CarrierCounty", 'Int'>
+    readonly appetiteLevel: FieldRef<"CarrierCounty", 'String'>
+    readonly windHailStance: FieldRef<"CarrierCounty", 'String'>
+    readonly windHailDetail: FieldRef<"CarrierCounty", 'String'>
+    readonly minDwelling: FieldRef<"CarrierCounty", 'Int'>
+    readonly constructionNote: FieldRef<"CarrierCounty", 'String'>
+    readonly maxProtectionClass: FieldRef<"CarrierCounty", 'Int'>
+    readonly uwNotes: FieldRef<"CarrierCounty", 'String'>
+    readonly updatedAt: FieldRef<"CarrierCounty", 'DateTime'>
   }
     
 
@@ -4374,7 +4525,10 @@ export namespace Prisma {
 
   export const CarrierScalarFieldEnum: {
     id: 'id',
-    name: 'name'
+    name: 'name',
+    amBest: 'amBest',
+    type: 'type',
+    website: 'website'
   };
 
   export type CarrierScalarFieldEnum = (typeof CarrierScalarFieldEnum)[keyof typeof CarrierScalarFieldEnum]
@@ -4383,7 +4537,15 @@ export namespace Prisma {
   export const CarrierCountyScalarFieldEnum: {
     id: 'id',
     carrierId: 'carrierId',
-    countyId: 'countyId'
+    countyId: 'countyId',
+    appetiteLevel: 'appetiteLevel',
+    windHailStance: 'windHailStance',
+    windHailDetail: 'windHailDetail',
+    minDwelling: 'minDwelling',
+    constructionNote: 'constructionNote',
+    maxProtectionClass: 'maxProtectionClass',
+    uwNotes: 'uwNotes',
+    updatedAt: 'updatedAt'
   };
 
   export type CarrierCountyScalarFieldEnum = (typeof CarrierCountyScalarFieldEnum)[keyof typeof CarrierCountyScalarFieldEnum]
@@ -4403,6 +4565,14 @@ export namespace Prisma {
   };
 
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -4442,6 +4612,20 @@ export namespace Prisma {
    * Reference to a field of type 'Boolean'
    */
   export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime'
+   */
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime[]'
+   */
+  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
     
 
 
@@ -4515,12 +4699,18 @@ export namespace Prisma {
     NOT?: CarrierWhereInput | CarrierWhereInput[]
     id?: IntFilter<"Carrier"> | number
     name?: StringFilter<"Carrier"> | string
+    amBest?: StringFilter<"Carrier"> | string
+    type?: StringFilter<"Carrier"> | string
+    website?: StringNullableFilter<"Carrier"> | string | null
     counties?: CarrierCountyListRelationFilter
   }
 
   export type CarrierOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
+    amBest?: SortOrder
+    type?: SortOrder
+    website?: SortOrderInput | SortOrder
     counties?: CarrierCountyOrderByRelationAggregateInput
   }
 
@@ -4530,12 +4720,18 @@ export namespace Prisma {
     AND?: CarrierWhereInput | CarrierWhereInput[]
     OR?: CarrierWhereInput[]
     NOT?: CarrierWhereInput | CarrierWhereInput[]
+    amBest?: StringFilter<"Carrier"> | string
+    type?: StringFilter<"Carrier"> | string
+    website?: StringNullableFilter<"Carrier"> | string | null
     counties?: CarrierCountyListRelationFilter
   }, "id" | "name">
 
   export type CarrierOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
+    amBest?: SortOrder
+    type?: SortOrder
+    website?: SortOrderInput | SortOrder
     _count?: CarrierCountOrderByAggregateInput
     _avg?: CarrierAvgOrderByAggregateInput
     _max?: CarrierMaxOrderByAggregateInput
@@ -4549,6 +4745,9 @@ export namespace Prisma {
     NOT?: CarrierScalarWhereWithAggregatesInput | CarrierScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Carrier"> | number
     name?: StringWithAggregatesFilter<"Carrier"> | string
+    amBest?: StringWithAggregatesFilter<"Carrier"> | string
+    type?: StringWithAggregatesFilter<"Carrier"> | string
+    website?: StringNullableWithAggregatesFilter<"Carrier"> | string | null
   }
 
   export type CarrierCountyWhereInput = {
@@ -4558,6 +4757,14 @@ export namespace Prisma {
     id?: IntFilter<"CarrierCounty"> | number
     carrierId?: IntFilter<"CarrierCounty"> | number
     countyId?: IntFilter<"CarrierCounty"> | number
+    appetiteLevel?: StringFilter<"CarrierCounty"> | string
+    windHailStance?: StringFilter<"CarrierCounty"> | string
+    windHailDetail?: StringNullableFilter<"CarrierCounty"> | string | null
+    minDwelling?: IntNullableFilter<"CarrierCounty"> | number | null
+    constructionNote?: StringNullableFilter<"CarrierCounty"> | string | null
+    maxProtectionClass?: IntNullableFilter<"CarrierCounty"> | number | null
+    uwNotes?: StringNullableFilter<"CarrierCounty"> | string | null
+    updatedAt?: DateTimeFilter<"CarrierCounty"> | Date | string
     carrier?: XOR<CarrierScalarRelationFilter, CarrierWhereInput>
     county?: XOR<CountyScalarRelationFilter, CountyWhereInput>
   }
@@ -4566,6 +4773,14 @@ export namespace Prisma {
     id?: SortOrder
     carrierId?: SortOrder
     countyId?: SortOrder
+    appetiteLevel?: SortOrder
+    windHailStance?: SortOrder
+    windHailDetail?: SortOrderInput | SortOrder
+    minDwelling?: SortOrderInput | SortOrder
+    constructionNote?: SortOrderInput | SortOrder
+    maxProtectionClass?: SortOrderInput | SortOrder
+    uwNotes?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
     carrier?: CarrierOrderByWithRelationInput
     county?: CountyOrderByWithRelationInput
   }
@@ -4578,6 +4793,14 @@ export namespace Prisma {
     NOT?: CarrierCountyWhereInput | CarrierCountyWhereInput[]
     carrierId?: IntFilter<"CarrierCounty"> | number
     countyId?: IntFilter<"CarrierCounty"> | number
+    appetiteLevel?: StringFilter<"CarrierCounty"> | string
+    windHailStance?: StringFilter<"CarrierCounty"> | string
+    windHailDetail?: StringNullableFilter<"CarrierCounty"> | string | null
+    minDwelling?: IntNullableFilter<"CarrierCounty"> | number | null
+    constructionNote?: StringNullableFilter<"CarrierCounty"> | string | null
+    maxProtectionClass?: IntNullableFilter<"CarrierCounty"> | number | null
+    uwNotes?: StringNullableFilter<"CarrierCounty"> | string | null
+    updatedAt?: DateTimeFilter<"CarrierCounty"> | Date | string
     carrier?: XOR<CarrierScalarRelationFilter, CarrierWhereInput>
     county?: XOR<CountyScalarRelationFilter, CountyWhereInput>
   }, "id" | "carrierId_countyId">
@@ -4586,6 +4809,14 @@ export namespace Prisma {
     id?: SortOrder
     carrierId?: SortOrder
     countyId?: SortOrder
+    appetiteLevel?: SortOrder
+    windHailStance?: SortOrder
+    windHailDetail?: SortOrderInput | SortOrder
+    minDwelling?: SortOrderInput | SortOrder
+    constructionNote?: SortOrderInput | SortOrder
+    maxProtectionClass?: SortOrderInput | SortOrder
+    uwNotes?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
     _count?: CarrierCountyCountOrderByAggregateInput
     _avg?: CarrierCountyAvgOrderByAggregateInput
     _max?: CarrierCountyMaxOrderByAggregateInput
@@ -4600,6 +4831,14 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"CarrierCounty"> | number
     carrierId?: IntWithAggregatesFilter<"CarrierCounty"> | number
     countyId?: IntWithAggregatesFilter<"CarrierCounty"> | number
+    appetiteLevel?: StringWithAggregatesFilter<"CarrierCounty"> | string
+    windHailStance?: StringWithAggregatesFilter<"CarrierCounty"> | string
+    windHailDetail?: StringNullableWithAggregatesFilter<"CarrierCounty"> | string | null
+    minDwelling?: IntNullableWithAggregatesFilter<"CarrierCounty"> | number | null
+    constructionNote?: StringNullableWithAggregatesFilter<"CarrierCounty"> | string | null
+    maxProtectionClass?: IntNullableWithAggregatesFilter<"CarrierCounty"> | number | null
+    uwNotes?: StringNullableWithAggregatesFilter<"CarrierCounty"> | string | null
+    updatedAt?: DateTimeWithAggregatesFilter<"CarrierCounty"> | Date | string
   }
 
   export type CountyCreateInput = {
@@ -4647,41 +4886,70 @@ export namespace Prisma {
 
   export type CarrierCreateInput = {
     name: string
+    amBest: string
+    type?: string
+    website?: string | null
     counties?: CarrierCountyCreateNestedManyWithoutCarrierInput
   }
 
   export type CarrierUncheckedCreateInput = {
     id?: number
     name: string
+    amBest: string
+    type?: string
+    website?: string | null
     counties?: CarrierCountyUncheckedCreateNestedManyWithoutCarrierInput
   }
 
   export type CarrierUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
+    amBest?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
     counties?: CarrierCountyUpdateManyWithoutCarrierNestedInput
   }
 
   export type CarrierUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    amBest?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
     counties?: CarrierCountyUncheckedUpdateManyWithoutCarrierNestedInput
   }
 
   export type CarrierCreateManyInput = {
     id?: number
     name: string
+    amBest: string
+    type?: string
+    website?: string | null
   }
 
   export type CarrierUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
+    amBest?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CarrierUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    amBest?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CarrierCountyCreateInput = {
+    appetiteLevel: string
+    windHailStance: string
+    windHailDetail?: string | null
+    minDwelling?: number | null
+    constructionNote?: string | null
+    maxProtectionClass?: number | null
+    uwNotes?: string | null
+    updatedAt?: Date | string
     carrier: CarrierCreateNestedOneWithoutCountiesInput
     county: CountyCreateNestedOneWithoutCarriersInput
   }
@@ -4690,9 +4958,25 @@ export namespace Prisma {
     id?: number
     carrierId: number
     countyId: number
+    appetiteLevel: string
+    windHailStance: string
+    windHailDetail?: string | null
+    minDwelling?: number | null
+    constructionNote?: string | null
+    maxProtectionClass?: number | null
+    uwNotes?: string | null
+    updatedAt?: Date | string
   }
 
   export type CarrierCountyUpdateInput = {
+    appetiteLevel?: StringFieldUpdateOperationsInput | string
+    windHailStance?: StringFieldUpdateOperationsInput | string
+    windHailDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    constructionNote?: NullableStringFieldUpdateOperationsInput | string | null
+    maxProtectionClass?: NullableIntFieldUpdateOperationsInput | number | null
+    uwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     carrier?: CarrierUpdateOneRequiredWithoutCountiesNestedInput
     county?: CountyUpdateOneRequiredWithoutCarriersNestedInput
   }
@@ -4701,22 +4985,53 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     carrierId?: IntFieldUpdateOperationsInput | number
     countyId?: IntFieldUpdateOperationsInput | number
+    appetiteLevel?: StringFieldUpdateOperationsInput | string
+    windHailStance?: StringFieldUpdateOperationsInput | string
+    windHailDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    constructionNote?: NullableStringFieldUpdateOperationsInput | string | null
+    maxProtectionClass?: NullableIntFieldUpdateOperationsInput | number | null
+    uwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CarrierCountyCreateManyInput = {
     id?: number
     carrierId: number
     countyId: number
+    appetiteLevel: string
+    windHailStance: string
+    windHailDetail?: string | null
+    minDwelling?: number | null
+    constructionNote?: string | null
+    maxProtectionClass?: number | null
+    uwNotes?: string | null
+    updatedAt?: Date | string
   }
 
   export type CarrierCountyUpdateManyMutationInput = {
-
+    appetiteLevel?: StringFieldUpdateOperationsInput | string
+    windHailStance?: StringFieldUpdateOperationsInput | string
+    windHailDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    constructionNote?: NullableStringFieldUpdateOperationsInput | string | null
+    maxProtectionClass?: NullableIntFieldUpdateOperationsInput | number | null
+    uwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CarrierCountyUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     carrierId?: IntFieldUpdateOperationsInput | number
     countyId?: IntFieldUpdateOperationsInput | number
+    appetiteLevel?: StringFieldUpdateOperationsInput | string
+    windHailStance?: StringFieldUpdateOperationsInput | string
+    windHailDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    constructionNote?: NullableStringFieldUpdateOperationsInput | string | null
+    maxProtectionClass?: NullableIntFieldUpdateOperationsInput | number | null
+    uwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -4828,9 +5143,32 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type CarrierCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    amBest?: SortOrder
+    type?: SortOrder
+    website?: SortOrder
   }
 
   export type CarrierAvgOrderByAggregateInput = {
@@ -4840,15 +5178,61 @@ export namespace Prisma {
   export type CarrierMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    amBest?: SortOrder
+    type?: SortOrder
+    website?: SortOrder
   }
 
   export type CarrierMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    amBest?: SortOrder
+    type?: SortOrder
+    website?: SortOrder
   }
 
   export type CarrierSumOrderByAggregateInput = {
     id?: SortOrder
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type CarrierScalarRelationFilter = {
@@ -4870,30 +5254,88 @@ export namespace Prisma {
     id?: SortOrder
     carrierId?: SortOrder
     countyId?: SortOrder
+    appetiteLevel?: SortOrder
+    windHailStance?: SortOrder
+    windHailDetail?: SortOrder
+    minDwelling?: SortOrder
+    constructionNote?: SortOrder
+    maxProtectionClass?: SortOrder
+    uwNotes?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type CarrierCountyAvgOrderByAggregateInput = {
     id?: SortOrder
     carrierId?: SortOrder
     countyId?: SortOrder
+    minDwelling?: SortOrder
+    maxProtectionClass?: SortOrder
   }
 
   export type CarrierCountyMaxOrderByAggregateInput = {
     id?: SortOrder
     carrierId?: SortOrder
     countyId?: SortOrder
+    appetiteLevel?: SortOrder
+    windHailStance?: SortOrder
+    windHailDetail?: SortOrder
+    minDwelling?: SortOrder
+    constructionNote?: SortOrder
+    maxProtectionClass?: SortOrder
+    uwNotes?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type CarrierCountyMinOrderByAggregateInput = {
     id?: SortOrder
     carrierId?: SortOrder
     countyId?: SortOrder
+    appetiteLevel?: SortOrder
+    windHailStance?: SortOrder
+    windHailDetail?: SortOrder
+    minDwelling?: SortOrder
+    constructionNote?: SortOrder
+    maxProtectionClass?: SortOrder
+    uwNotes?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type CarrierCountySumOrderByAggregateInput = {
     id?: SortOrder
     carrierId?: SortOrder
     countyId?: SortOrder
+    minDwelling?: SortOrder
+    maxProtectionClass?: SortOrder
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type CarrierCountyCreateNestedManyWithoutCountyInput = {
@@ -4968,6 +5410,10 @@ export namespace Prisma {
     connect?: CarrierCountyWhereUniqueInput | CarrierCountyWhereUniqueInput[]
   }
 
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
   export type CarrierCountyUpdateManyWithoutCarrierNestedInput = {
     create?: XOR<CarrierCountyCreateWithoutCarrierInput, CarrierCountyUncheckedCreateWithoutCarrierInput> | CarrierCountyCreateWithoutCarrierInput[] | CarrierCountyUncheckedCreateWithoutCarrierInput[]
     connectOrCreate?: CarrierCountyCreateOrConnectWithoutCarrierInput | CarrierCountyCreateOrConnectWithoutCarrierInput[]
@@ -5006,6 +5452,18 @@ export namespace Prisma {
     create?: XOR<CountyCreateWithoutCarriersInput, CountyUncheckedCreateWithoutCarriersInput>
     connectOrCreate?: CountyCreateOrConnectWithoutCarriersInput
     connect?: CountyWhereUniqueInput
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type CarrierUpdateOneRequiredWithoutCountiesNestedInput = {
@@ -5106,13 +5564,123 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
   export type CarrierCountyCreateWithoutCountyInput = {
+    appetiteLevel: string
+    windHailStance: string
+    windHailDetail?: string | null
+    minDwelling?: number | null
+    constructionNote?: string | null
+    maxProtectionClass?: number | null
+    uwNotes?: string | null
+    updatedAt?: Date | string
     carrier: CarrierCreateNestedOneWithoutCountiesInput
   }
 
   export type CarrierCountyUncheckedCreateWithoutCountyInput = {
     id?: number
     carrierId: number
+    appetiteLevel: string
+    windHailStance: string
+    windHailDetail?: string | null
+    minDwelling?: number | null
+    constructionNote?: string | null
+    maxProtectionClass?: number | null
+    uwNotes?: string | null
+    updatedAt?: Date | string
   }
 
   export type CarrierCountyCreateOrConnectWithoutCountyInput = {
@@ -5148,15 +5716,39 @@ export namespace Prisma {
     id?: IntFilter<"CarrierCounty"> | number
     carrierId?: IntFilter<"CarrierCounty"> | number
     countyId?: IntFilter<"CarrierCounty"> | number
+    appetiteLevel?: StringFilter<"CarrierCounty"> | string
+    windHailStance?: StringFilter<"CarrierCounty"> | string
+    windHailDetail?: StringNullableFilter<"CarrierCounty"> | string | null
+    minDwelling?: IntNullableFilter<"CarrierCounty"> | number | null
+    constructionNote?: StringNullableFilter<"CarrierCounty"> | string | null
+    maxProtectionClass?: IntNullableFilter<"CarrierCounty"> | number | null
+    uwNotes?: StringNullableFilter<"CarrierCounty"> | string | null
+    updatedAt?: DateTimeFilter<"CarrierCounty"> | Date | string
   }
 
   export type CarrierCountyCreateWithoutCarrierInput = {
+    appetiteLevel: string
+    windHailStance: string
+    windHailDetail?: string | null
+    minDwelling?: number | null
+    constructionNote?: string | null
+    maxProtectionClass?: number | null
+    uwNotes?: string | null
+    updatedAt?: Date | string
     county: CountyCreateNestedOneWithoutCarriersInput
   }
 
   export type CarrierCountyUncheckedCreateWithoutCarrierInput = {
     id?: number
     countyId: number
+    appetiteLevel: string
+    windHailStance: string
+    windHailDetail?: string | null
+    minDwelling?: number | null
+    constructionNote?: string | null
+    maxProtectionClass?: number | null
+    uwNotes?: string | null
+    updatedAt?: Date | string
   }
 
   export type CarrierCountyCreateOrConnectWithoutCarrierInput = {
@@ -5187,11 +5779,17 @@ export namespace Prisma {
 
   export type CarrierCreateWithoutCountiesInput = {
     name: string
+    amBest: string
+    type?: string
+    website?: string | null
   }
 
   export type CarrierUncheckedCreateWithoutCountiesInput = {
     id?: number
     name: string
+    amBest: string
+    type?: string
+    website?: string | null
   }
 
   export type CarrierCreateOrConnectWithoutCountiesInput = {
@@ -5228,11 +5826,17 @@ export namespace Prisma {
 
   export type CarrierUpdateWithoutCountiesInput = {
     name?: StringFieldUpdateOperationsInput | string
+    amBest?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CarrierUncheckedUpdateWithoutCountiesInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    amBest?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CountyUpsertWithoutCarriersInput = {
@@ -5260,39 +5864,103 @@ export namespace Prisma {
   export type CarrierCountyCreateManyCountyInput = {
     id?: number
     carrierId: number
+    appetiteLevel: string
+    windHailStance: string
+    windHailDetail?: string | null
+    minDwelling?: number | null
+    constructionNote?: string | null
+    maxProtectionClass?: number | null
+    uwNotes?: string | null
+    updatedAt?: Date | string
   }
 
   export type CarrierCountyUpdateWithoutCountyInput = {
+    appetiteLevel?: StringFieldUpdateOperationsInput | string
+    windHailStance?: StringFieldUpdateOperationsInput | string
+    windHailDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    constructionNote?: NullableStringFieldUpdateOperationsInput | string | null
+    maxProtectionClass?: NullableIntFieldUpdateOperationsInput | number | null
+    uwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     carrier?: CarrierUpdateOneRequiredWithoutCountiesNestedInput
   }
 
   export type CarrierCountyUncheckedUpdateWithoutCountyInput = {
     id?: IntFieldUpdateOperationsInput | number
     carrierId?: IntFieldUpdateOperationsInput | number
+    appetiteLevel?: StringFieldUpdateOperationsInput | string
+    windHailStance?: StringFieldUpdateOperationsInput | string
+    windHailDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    constructionNote?: NullableStringFieldUpdateOperationsInput | string | null
+    maxProtectionClass?: NullableIntFieldUpdateOperationsInput | number | null
+    uwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CarrierCountyUncheckedUpdateManyWithoutCountyInput = {
     id?: IntFieldUpdateOperationsInput | number
     carrierId?: IntFieldUpdateOperationsInput | number
+    appetiteLevel?: StringFieldUpdateOperationsInput | string
+    windHailStance?: StringFieldUpdateOperationsInput | string
+    windHailDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    constructionNote?: NullableStringFieldUpdateOperationsInput | string | null
+    maxProtectionClass?: NullableIntFieldUpdateOperationsInput | number | null
+    uwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CarrierCountyCreateManyCarrierInput = {
     id?: number
     countyId: number
+    appetiteLevel: string
+    windHailStance: string
+    windHailDetail?: string | null
+    minDwelling?: number | null
+    constructionNote?: string | null
+    maxProtectionClass?: number | null
+    uwNotes?: string | null
+    updatedAt?: Date | string
   }
 
   export type CarrierCountyUpdateWithoutCarrierInput = {
+    appetiteLevel?: StringFieldUpdateOperationsInput | string
+    windHailStance?: StringFieldUpdateOperationsInput | string
+    windHailDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    constructionNote?: NullableStringFieldUpdateOperationsInput | string | null
+    maxProtectionClass?: NullableIntFieldUpdateOperationsInput | number | null
+    uwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     county?: CountyUpdateOneRequiredWithoutCarriersNestedInput
   }
 
   export type CarrierCountyUncheckedUpdateWithoutCarrierInput = {
     id?: IntFieldUpdateOperationsInput | number
     countyId?: IntFieldUpdateOperationsInput | number
+    appetiteLevel?: StringFieldUpdateOperationsInput | string
+    windHailStance?: StringFieldUpdateOperationsInput | string
+    windHailDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    constructionNote?: NullableStringFieldUpdateOperationsInput | string | null
+    maxProtectionClass?: NullableIntFieldUpdateOperationsInput | number | null
+    uwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CarrierCountyUncheckedUpdateManyWithoutCarrierInput = {
     id?: IntFieldUpdateOperationsInput | number
     countyId?: IntFieldUpdateOperationsInput | number
+    appetiteLevel?: StringFieldUpdateOperationsInput | string
+    windHailStance?: StringFieldUpdateOperationsInput | string
+    windHailDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    constructionNote?: NullableStringFieldUpdateOperationsInput | string | null
+    maxProtectionClass?: NullableIntFieldUpdateOperationsInput | number | null
+    uwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 
