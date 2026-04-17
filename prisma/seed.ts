@@ -13,11 +13,22 @@ const prisma = new PrismaClient({ adapter });
 // ──────────────────────────────────────────────────────────
 const CARRIERS: Array<{
   name: string;
-  amBest: string;
+  rating: string;
   type: "Admitted" | "E&S";
   website: string | null;
 }> = [
-  // empty for now
+  { name: "Frontline",          rating: "BBB+ (Kroll)",    type: "Admitted", website: null },
+  { name: "Allied Trust",       rating: "A (Demotech)",    type: "Admitted", website: null },
+  { name: "Markel (J&J)",       rating: "A (AM Best)",     type: "Admitted", website: null },
+  { name: "Markel (RPS)",       rating: "A (AM Best)",     type: "Admitted", website: null },
+  { name: "American Integrity", rating: "A (Demotech)",    type: "Admitted", website: null },
+  { name: "Heritage",           rating: "A (Demotech)",    type: "Admitted", website: null },
+  { name: "Safeport",           rating: "A- (AM Best)",    type: "Admitted", website: null },
+  { name: "Occidental",         rating: "A- (AM Best)",    type: "Admitted", website: null },
+  { name: "Hartford",           rating: "A (AM Best)",     type: "Admitted", website: null },
+  { name: "ICAT",               rating: "A (AM Best)",     type: "E&S",      website: null },
+  { name: "Swyfft",             rating: "A (AM Best)",     type: "E&S",      website: null },
+  { name: "J&J",                rating: "A (AM Best)",     type: "E&S",      website: null },
 ];
 
 // ──────────────────────────────────────────────────────────
@@ -57,7 +68,7 @@ async function seedCarriers() {
   for (const c of CARRIERS) {
     await prisma.carrier.upsert({
       where: { name: c.name },
-      update: { amBest: c.amBest, type: c.type, website: c.website },
+      update: { rating: c.rating, type: c.type, website: c.website },
       create: c,
     });
   }

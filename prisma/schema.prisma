@@ -18,7 +18,7 @@ model County {
 model Carrier {
   id        Int             @id @default(autoincrement())
   name      String          @unique
-  amBest    String
+  rating    String
   type      String          @default("Admitted")
   website   String?
   counties  CarrierCounty[]

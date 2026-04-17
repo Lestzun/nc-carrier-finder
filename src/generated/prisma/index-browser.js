@@ -129,7 +129,7 @@ exports.Prisma.CountyScalarFieldEnum = {
 exports.Prisma.CarrierScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  amBest: 'amBest',
+  rating: 'rating',
   type: 'type',
   website: 'website'
 };

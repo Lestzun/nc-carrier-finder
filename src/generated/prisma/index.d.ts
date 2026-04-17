@@ -2215,7 +2215,7 @@ export namespace Prisma {
   export type CarrierMinAggregateOutputType = {
     id: number | null
     name: string | null
-    amBest: string | null
+    rating: string | null
     type: string | null
     website: string | null
   }
@@ -2223,7 +2223,7 @@ export namespace Prisma {
   export type CarrierMaxAggregateOutputType = {
     id: number | null
     name: string | null
-    amBest: string | null
+    rating: string | null
     type: string | null
     website: string | null
   }
@@ -2231,7 +2231,7 @@ export namespace Prisma {
   export type CarrierCountAggregateOutputType = {
     id: number
     name: number
-    amBest: number
+    rating: number
     type: number
     website: number
     _all: number
@@ -2249,7 +2249,7 @@ export namespace Prisma {
   export type CarrierMinAggregateInputType = {
     id?: true
     name?: true
-    amBest?: true
+    rating?: true
     type?: true
     website?: true
   }
@@ -2257,7 +2257,7 @@ export namespace Prisma {
   export type CarrierMaxAggregateInputType = {
     id?: true
     name?: true
-    amBest?: true
+    rating?: true
     type?: true
     website?: true
   }
@@ -2265,7 +2265,7 @@ export namespace Prisma {
   export type CarrierCountAggregateInputType = {
     id?: true
     name?: true
-    amBest?: true
+    rating?: true
     type?: true
     website?: true
     _all?: true
@@ -2360,7 +2360,7 @@ export namespace Prisma {
   export type CarrierGroupByOutputType = {
     id: number
     name: string
-    amBest: string
+    rating: string
     type: string
     website: string | null
     _count: CarrierCountAggregateOutputType | null
@@ -2387,7 +2387,7 @@ export namespace Prisma {
   export type CarrierSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    amBest?: boolean
+    rating?: boolean
     type?: boolean
     website?: boolean
     counties?: boolean | Carrier$countiesArgs<ExtArgs>
@@ -2397,7 +2397,7 @@ export namespace Prisma {
   export type CarrierSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    amBest?: boolean
+    rating?: boolean
     type?: boolean
     website?: boolean
   }, ExtArgs["result"]["carrier"]>
@@ -2405,7 +2405,7 @@ export namespace Prisma {
   export type CarrierSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    amBest?: boolean
+    rating?: boolean
     type?: boolean
     website?: boolean
   }, ExtArgs["result"]["carrier"]>
@@ -2413,12 +2413,12 @@ export namespace Prisma {
   export type CarrierSelectScalar = {
     id?: boolean
     name?: boolean
-    amBest?: boolean
+    rating?: boolean
     type?: boolean
     website?: boolean
   }
 
-  export type CarrierOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "amBest" | "type" | "website", ExtArgs["result"]["carrier"]>
+  export type CarrierOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "rating" | "type" | "website", ExtArgs["result"]["carrier"]>
   export type CarrierInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     counties?: boolean | Carrier$countiesArgs<ExtArgs>
     _count?: boolean | CarrierCountOutputTypeDefaultArgs<ExtArgs>
@@ -2434,7 +2434,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       name: string
-      amBest: string
+      rating: string
       type: string
       website: string | null
     }, ExtArgs["result"]["carrier"]>
@@ -2863,7 +2863,7 @@ export namespace Prisma {
   interface CarrierFieldRefs {
     readonly id: FieldRef<"Carrier", 'Int'>
     readonly name: FieldRef<"Carrier", 'String'>
-    readonly amBest: FieldRef<"Carrier", 'String'>
+    readonly rating: FieldRef<"Carrier", 'String'>
     readonly type: FieldRef<"Carrier", 'String'>
     readonly website: FieldRef<"Carrier", 'String'>
   }
@@ -4526,7 +4526,7 @@ export namespace Prisma {
   export const CarrierScalarFieldEnum: {
     id: 'id',
     name: 'name',
-    amBest: 'amBest',
+    rating: 'rating',
     type: 'type',
     website: 'website'
   };
@@ -4699,7 +4699,7 @@ export namespace Prisma {
     NOT?: CarrierWhereInput | CarrierWhereInput[]
     id?: IntFilter<"Carrier"> | number
     name?: StringFilter<"Carrier"> | string
-    amBest?: StringFilter<"Carrier"> | string
+    rating?: StringFilter<"Carrier"> | string
     type?: StringFilter<"Carrier"> | string
     website?: StringNullableFilter<"Carrier"> | string | null
     counties?: CarrierCountyListRelationFilter
@@ -4708,7 +4708,7 @@ export namespace Prisma {
   export type CarrierOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
-    amBest?: SortOrder
+    rating?: SortOrder
     type?: SortOrder
     website?: SortOrderInput | SortOrder
     counties?: CarrierCountyOrderByRelationAggregateInput
@@ -4720,7 +4720,7 @@ export namespace Prisma {
     AND?: CarrierWhereInput | CarrierWhereInput[]
     OR?: CarrierWhereInput[]
     NOT?: CarrierWhereInput | CarrierWhereInput[]
-    amBest?: StringFilter<"Carrier"> | string
+    rating?: StringFilter<"Carrier"> | string
     type?: StringFilter<"Carrier"> | string
     website?: StringNullableFilter<"Carrier"> | string | null
     counties?: CarrierCountyListRelationFilter
@@ -4729,7 +4729,7 @@ export namespace Prisma {
   export type CarrierOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
-    amBest?: SortOrder
+    rating?: SortOrder
     type?: SortOrder
     website?: SortOrderInput | SortOrder
     _count?: CarrierCountOrderByAggregateInput
@@ -4745,7 +4745,7 @@ export namespace Prisma {
     NOT?: CarrierScalarWhereWithAggregatesInput | CarrierScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Carrier"> | number
     name?: StringWithAggregatesFilter<"Carrier"> | string
-    amBest?: StringWithAggregatesFilter<"Carrier"> | string
+    rating?: StringWithAggregatesFilter<"Carrier"> | string
     type?: StringWithAggregatesFilter<"Carrier"> | string
     website?: StringNullableWithAggregatesFilter<"Carrier"> | string | null
   }
@@ -4886,7 +4886,7 @@ export namespace Prisma {
 
   export type CarrierCreateInput = {
     name: string
-    amBest: string
+    rating: string
     type?: string
     website?: string | null
     counties?: CarrierCountyCreateNestedManyWithoutCarrierInput
@@ -4895,7 +4895,7 @@ export namespace Prisma {
   export type CarrierUncheckedCreateInput = {
     id?: number
     name: string
-    amBest: string
+    rating: string
     type?: string
     website?: string | null
     counties?: CarrierCountyUncheckedCreateNestedManyWithoutCarrierInput
@@ -4903,7 +4903,7 @@ export namespace Prisma {
 
   export type CarrierUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
-    amBest?: StringFieldUpdateOperationsInput | string
+    rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     counties?: CarrierCountyUpdateManyWithoutCarrierNestedInput
@@ -4912,7 +4912,7 @@ export namespace Prisma {
   export type CarrierUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    amBest?: StringFieldUpdateOperationsInput | string
+    rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     counties?: CarrierCountyUncheckedUpdateManyWithoutCarrierNestedInput
@@ -4921,14 +4921,14 @@ export namespace Prisma {
   export type CarrierCreateManyInput = {
     id?: number
     name: string
-    amBest: string
+    rating: string
     type?: string
     website?: string | null
   }
 
   export type CarrierUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
-    amBest?: StringFieldUpdateOperationsInput | string
+    rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -4936,7 +4936,7 @@ export namespace Prisma {
   export type CarrierUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    amBest?: StringFieldUpdateOperationsInput | string
+    rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -5166,7 +5166,7 @@ export namespace Prisma {
   export type CarrierCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    amBest?: SortOrder
+    rating?: SortOrder
     type?: SortOrder
     website?: SortOrder
   }
@@ -5178,7 +5178,7 @@ export namespace Prisma {
   export type CarrierMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    amBest?: SortOrder
+    rating?: SortOrder
     type?: SortOrder
     website?: SortOrder
   }
@@ -5186,7 +5186,7 @@ export namespace Prisma {
   export type CarrierMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    amBest?: SortOrder
+    rating?: SortOrder
     type?: SortOrder
     website?: SortOrder
   }
@@ -5779,7 +5779,7 @@ export namespace Prisma {
 
   export type CarrierCreateWithoutCountiesInput = {
     name: string
-    amBest: string
+    rating: string
     type?: string
     website?: string | null
   }
@@ -5787,7 +5787,7 @@ export namespace Prisma {
   export type CarrierUncheckedCreateWithoutCountiesInput = {
     id?: number
     name: string
-    amBest: string
+    rating: string
     type?: string
     website?: string | null
   }
@@ -5826,7 +5826,7 @@ export namespace Prisma {
 
   export type CarrierUpdateWithoutCountiesInput = {
     name?: StringFieldUpdateOperationsInput | string
-    amBest?: StringFieldUpdateOperationsInput | string
+    rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -5834,7 +5834,7 @@ export namespace Prisma {
   export type CarrierUncheckedUpdateWithoutCountiesInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    amBest?: StringFieldUpdateOperationsInput | string
+    rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
   }
