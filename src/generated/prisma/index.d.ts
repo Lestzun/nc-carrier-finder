@@ -2206,10 +2206,18 @@ export namespace Prisma {
 
   export type CarrierAvgAggregateOutputType = {
     id: number | null
+    maxDwelling: number | null
+    minDwelling: number | null
+    maxHomeAge: number | null
+    maxRoofAge: number | null
   }
 
   export type CarrierSumAggregateOutputType = {
     id: number | null
+    maxDwelling: number | null
+    minDwelling: number | null
+    maxHomeAge: number | null
+    maxRoofAge: number | null
   }
 
   export type CarrierMinAggregateOutputType = {
@@ -2218,6 +2226,11 @@ export namespace Prisma {
     rating: string | null
     type: string | null
     website: string | null
+    maxDwelling: number | null
+    minDwelling: number | null
+    maxHomeAge: number | null
+    maxRoofAge: number | null
+    generalUwNotes: string | null
   }
 
   export type CarrierMaxAggregateOutputType = {
@@ -2226,6 +2239,11 @@ export namespace Prisma {
     rating: string | null
     type: string | null
     website: string | null
+    maxDwelling: number | null
+    minDwelling: number | null
+    maxHomeAge: number | null
+    maxRoofAge: number | null
+    generalUwNotes: string | null
   }
 
   export type CarrierCountAggregateOutputType = {
@@ -2234,16 +2252,29 @@ export namespace Prisma {
     rating: number
     type: number
     website: number
+    maxDwelling: number
+    minDwelling: number
+    maxHomeAge: number
+    maxRoofAge: number
+    generalUwNotes: number
     _all: number
   }
 
 
   export type CarrierAvgAggregateInputType = {
     id?: true
+    maxDwelling?: true
+    minDwelling?: true
+    maxHomeAge?: true
+    maxRoofAge?: true
   }
 
   export type CarrierSumAggregateInputType = {
     id?: true
+    maxDwelling?: true
+    minDwelling?: true
+    maxHomeAge?: true
+    maxRoofAge?: true
   }
 
   export type CarrierMinAggregateInputType = {
@@ -2252,6 +2283,11 @@ export namespace Prisma {
     rating?: true
     type?: true
     website?: true
+    maxDwelling?: true
+    minDwelling?: true
+    maxHomeAge?: true
+    maxRoofAge?: true
+    generalUwNotes?: true
   }
 
   export type CarrierMaxAggregateInputType = {
@@ -2260,6 +2296,11 @@ export namespace Prisma {
     rating?: true
     type?: true
     website?: true
+    maxDwelling?: true
+    minDwelling?: true
+    maxHomeAge?: true
+    maxRoofAge?: true
+    generalUwNotes?: true
   }
 
   export type CarrierCountAggregateInputType = {
@@ -2268,6 +2309,11 @@ export namespace Prisma {
     rating?: true
     type?: true
     website?: true
+    maxDwelling?: true
+    minDwelling?: true
+    maxHomeAge?: true
+    maxRoofAge?: true
+    generalUwNotes?: true
     _all?: true
   }
 
@@ -2363,6 +2409,11 @@ export namespace Prisma {
     rating: string
     type: string
     website: string | null
+    maxDwelling: number | null
+    minDwelling: number | null
+    maxHomeAge: number | null
+    maxRoofAge: number | null
+    generalUwNotes: string | null
     _count: CarrierCountAggregateOutputType | null
     _avg: CarrierAvgAggregateOutputType | null
     _sum: CarrierSumAggregateOutputType | null
@@ -2390,6 +2441,11 @@ export namespace Prisma {
     rating?: boolean
     type?: boolean
     website?: boolean
+    maxDwelling?: boolean
+    minDwelling?: boolean
+    maxHomeAge?: boolean
+    maxRoofAge?: boolean
+    generalUwNotes?: boolean
     counties?: boolean | Carrier$countiesArgs<ExtArgs>
     _count?: boolean | CarrierCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["carrier"]>
@@ -2400,6 +2456,11 @@ export namespace Prisma {
     rating?: boolean
     type?: boolean
     website?: boolean
+    maxDwelling?: boolean
+    minDwelling?: boolean
+    maxHomeAge?: boolean
+    maxRoofAge?: boolean
+    generalUwNotes?: boolean
   }, ExtArgs["result"]["carrier"]>
 
   export type CarrierSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2408,6 +2469,11 @@ export namespace Prisma {
     rating?: boolean
     type?: boolean
     website?: boolean
+    maxDwelling?: boolean
+    minDwelling?: boolean
+    maxHomeAge?: boolean
+    maxRoofAge?: boolean
+    generalUwNotes?: boolean
   }, ExtArgs["result"]["carrier"]>
 
   export type CarrierSelectScalar = {
@@ -2416,9 +2482,14 @@ export namespace Prisma {
     rating?: boolean
     type?: boolean
     website?: boolean
+    maxDwelling?: boolean
+    minDwelling?: boolean
+    maxHomeAge?: boolean
+    maxRoofAge?: boolean
+    generalUwNotes?: boolean
   }
 
-  export type CarrierOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "rating" | "type" | "website", ExtArgs["result"]["carrier"]>
+  export type CarrierOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "rating" | "type" | "website" | "maxDwelling" | "minDwelling" | "maxHomeAge" | "maxRoofAge" | "generalUwNotes", ExtArgs["result"]["carrier"]>
   export type CarrierInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     counties?: boolean | Carrier$countiesArgs<ExtArgs>
     _count?: boolean | CarrierCountOutputTypeDefaultArgs<ExtArgs>
@@ -2437,6 +2508,11 @@ export namespace Prisma {
       rating: string
       type: string
       website: string | null
+      maxDwelling: number | null
+      minDwelling: number | null
+      maxHomeAge: number | null
+      maxRoofAge: number | null
+      generalUwNotes: string | null
     }, ExtArgs["result"]["carrier"]>
     composites: {}
   }
@@ -2866,6 +2942,11 @@ export namespace Prisma {
     readonly rating: FieldRef<"Carrier", 'String'>
     readonly type: FieldRef<"Carrier", 'String'>
     readonly website: FieldRef<"Carrier", 'String'>
+    readonly maxDwelling: FieldRef<"Carrier", 'Int'>
+    readonly minDwelling: FieldRef<"Carrier", 'Int'>
+    readonly maxHomeAge: FieldRef<"Carrier", 'Int'>
+    readonly maxRoofAge: FieldRef<"Carrier", 'Int'>
+    readonly generalUwNotes: FieldRef<"Carrier", 'String'>
   }
     
 
@@ -4528,7 +4609,12 @@ export namespace Prisma {
     name: 'name',
     rating: 'rating',
     type: 'type',
-    website: 'website'
+    website: 'website',
+    maxDwelling: 'maxDwelling',
+    minDwelling: 'minDwelling',
+    maxHomeAge: 'maxHomeAge',
+    maxRoofAge: 'maxRoofAge',
+    generalUwNotes: 'generalUwNotes'
   };
 
   export type CarrierScalarFieldEnum = (typeof CarrierScalarFieldEnum)[keyof typeof CarrierScalarFieldEnum]
@@ -4702,6 +4788,11 @@ export namespace Prisma {
     rating?: StringFilter<"Carrier"> | string
     type?: StringFilter<"Carrier"> | string
     website?: StringNullableFilter<"Carrier"> | string | null
+    maxDwelling?: IntNullableFilter<"Carrier"> | number | null
+    minDwelling?: IntNullableFilter<"Carrier"> | number | null
+    maxHomeAge?: IntNullableFilter<"Carrier"> | number | null
+    maxRoofAge?: IntNullableFilter<"Carrier"> | number | null
+    generalUwNotes?: StringNullableFilter<"Carrier"> | string | null
     counties?: CarrierCountyListRelationFilter
   }
 
@@ -4711,6 +4802,11 @@ export namespace Prisma {
     rating?: SortOrder
     type?: SortOrder
     website?: SortOrderInput | SortOrder
+    maxDwelling?: SortOrderInput | SortOrder
+    minDwelling?: SortOrderInput | SortOrder
+    maxHomeAge?: SortOrderInput | SortOrder
+    maxRoofAge?: SortOrderInput | SortOrder
+    generalUwNotes?: SortOrderInput | SortOrder
     counties?: CarrierCountyOrderByRelationAggregateInput
   }
 
@@ -4723,6 +4819,11 @@ export namespace Prisma {
     rating?: StringFilter<"Carrier"> | string
     type?: StringFilter<"Carrier"> | string
     website?: StringNullableFilter<"Carrier"> | string | null
+    maxDwelling?: IntNullableFilter<"Carrier"> | number | null
+    minDwelling?: IntNullableFilter<"Carrier"> | number | null
+    maxHomeAge?: IntNullableFilter<"Carrier"> | number | null
+    maxRoofAge?: IntNullableFilter<"Carrier"> | number | null
+    generalUwNotes?: StringNullableFilter<"Carrier"> | string | null
     counties?: CarrierCountyListRelationFilter
   }, "id" | "name">
 
@@ -4732,6 +4833,11 @@ export namespace Prisma {
     rating?: SortOrder
     type?: SortOrder
     website?: SortOrderInput | SortOrder
+    maxDwelling?: SortOrderInput | SortOrder
+    minDwelling?: SortOrderInput | SortOrder
+    maxHomeAge?: SortOrderInput | SortOrder
+    maxRoofAge?: SortOrderInput | SortOrder
+    generalUwNotes?: SortOrderInput | SortOrder
     _count?: CarrierCountOrderByAggregateInput
     _avg?: CarrierAvgOrderByAggregateInput
     _max?: CarrierMaxOrderByAggregateInput
@@ -4748,6 +4854,11 @@ export namespace Prisma {
     rating?: StringWithAggregatesFilter<"Carrier"> | string
     type?: StringWithAggregatesFilter<"Carrier"> | string
     website?: StringNullableWithAggregatesFilter<"Carrier"> | string | null
+    maxDwelling?: IntNullableWithAggregatesFilter<"Carrier"> | number | null
+    minDwelling?: IntNullableWithAggregatesFilter<"Carrier"> | number | null
+    maxHomeAge?: IntNullableWithAggregatesFilter<"Carrier"> | number | null
+    maxRoofAge?: IntNullableWithAggregatesFilter<"Carrier"> | number | null
+    generalUwNotes?: StringNullableWithAggregatesFilter<"Carrier"> | string | null
   }
 
   export type CarrierCountyWhereInput = {
@@ -4889,6 +5000,11 @@ export namespace Prisma {
     rating: string
     type?: string
     website?: string | null
+    maxDwelling?: number | null
+    minDwelling?: number | null
+    maxHomeAge?: number | null
+    maxRoofAge?: number | null
+    generalUwNotes?: string | null
     counties?: CarrierCountyCreateNestedManyWithoutCarrierInput
   }
 
@@ -4898,6 +5014,11 @@ export namespace Prisma {
     rating: string
     type?: string
     website?: string | null
+    maxDwelling?: number | null
+    minDwelling?: number | null
+    maxHomeAge?: number | null
+    maxRoofAge?: number | null
+    generalUwNotes?: string | null
     counties?: CarrierCountyUncheckedCreateNestedManyWithoutCarrierInput
   }
 
@@ -4906,6 +5027,11 @@ export namespace Prisma {
     rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
+    maxDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
+    maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
+    generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
     counties?: CarrierCountyUpdateManyWithoutCarrierNestedInput
   }
 
@@ -4915,6 +5041,11 @@ export namespace Prisma {
     rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
+    maxDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
+    maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
+    generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
     counties?: CarrierCountyUncheckedUpdateManyWithoutCarrierNestedInput
   }
 
@@ -4924,6 +5055,11 @@ export namespace Prisma {
     rating: string
     type?: string
     website?: string | null
+    maxDwelling?: number | null
+    minDwelling?: number | null
+    maxHomeAge?: number | null
+    maxRoofAge?: number | null
+    generalUwNotes?: string | null
   }
 
   export type CarrierUpdateManyMutationInput = {
@@ -4931,6 +5067,11 @@ export namespace Prisma {
     rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
+    maxDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
+    maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
+    generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CarrierUncheckedUpdateManyInput = {
@@ -4939,6 +5080,11 @@ export namespace Prisma {
     rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
+    maxDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
+    maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
+    generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CarrierCountyCreateInput = {
@@ -5158,6 +5304,17 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -5169,10 +5326,19 @@ export namespace Prisma {
     rating?: SortOrder
     type?: SortOrder
     website?: SortOrder
+    maxDwelling?: SortOrder
+    minDwelling?: SortOrder
+    maxHomeAge?: SortOrder
+    maxRoofAge?: SortOrder
+    generalUwNotes?: SortOrder
   }
 
   export type CarrierAvgOrderByAggregateInput = {
     id?: SortOrder
+    maxDwelling?: SortOrder
+    minDwelling?: SortOrder
+    maxHomeAge?: SortOrder
+    maxRoofAge?: SortOrder
   }
 
   export type CarrierMaxOrderByAggregateInput = {
@@ -5181,6 +5347,11 @@ export namespace Prisma {
     rating?: SortOrder
     type?: SortOrder
     website?: SortOrder
+    maxDwelling?: SortOrder
+    minDwelling?: SortOrder
+    maxHomeAge?: SortOrder
+    maxRoofAge?: SortOrder
+    generalUwNotes?: SortOrder
   }
 
   export type CarrierMinOrderByAggregateInput = {
@@ -5189,10 +5360,19 @@ export namespace Prisma {
     rating?: SortOrder
     type?: SortOrder
     website?: SortOrder
+    maxDwelling?: SortOrder
+    minDwelling?: SortOrder
+    maxHomeAge?: SortOrder
+    maxRoofAge?: SortOrder
+    generalUwNotes?: SortOrder
   }
 
   export type CarrierSumOrderByAggregateInput = {
     id?: SortOrder
+    maxDwelling?: SortOrder
+    minDwelling?: SortOrder
+    maxHomeAge?: SortOrder
+    maxRoofAge?: SortOrder
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -5213,7 +5393,7 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type IntNullableFilter<$PrismaModel = never> = {
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -5221,7 +5401,12 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
@@ -5306,22 +5491,6 @@ export namespace Prisma {
     countyId?: SortOrder
     minDwelling?: SortOrder
     maxProtectionClass?: SortOrder
-  }
-
-  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -5414,6 +5583,14 @@ export namespace Prisma {
     set?: string | null
   }
 
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type CarrierCountyUpdateManyWithoutCarrierNestedInput = {
     create?: XOR<CarrierCountyCreateWithoutCarrierInput, CarrierCountyUncheckedCreateWithoutCarrierInput> | CarrierCountyCreateWithoutCarrierInput[] | CarrierCountyUncheckedCreateWithoutCarrierInput[]
     connectOrCreate?: CarrierCountyCreateOrConnectWithoutCarrierInput | CarrierCountyCreateOrConnectWithoutCarrierInput[]
@@ -5452,14 +5629,6 @@ export namespace Prisma {
     create?: XOR<CountyCreateWithoutCarriersInput, CountyUncheckedCreateWithoutCarriersInput>
     connectOrCreate?: CountyCreateOrConnectWithoutCarriersInput
     connect?: CountyWhereUniqueInput
-  }
-
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -5578,6 +5747,17 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -5593,28 +5773,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -5642,6 +5800,17 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -5782,6 +5951,11 @@ export namespace Prisma {
     rating: string
     type?: string
     website?: string | null
+    maxDwelling?: number | null
+    minDwelling?: number | null
+    maxHomeAge?: number | null
+    maxRoofAge?: number | null
+    generalUwNotes?: string | null
   }
 
   export type CarrierUncheckedCreateWithoutCountiesInput = {
@@ -5790,6 +5964,11 @@ export namespace Prisma {
     rating: string
     type?: string
     website?: string | null
+    maxDwelling?: number | null
+    minDwelling?: number | null
+    maxHomeAge?: number | null
+    maxRoofAge?: number | null
+    generalUwNotes?: string | null
   }
 
   export type CarrierCreateOrConnectWithoutCountiesInput = {
@@ -5829,6 +6008,11 @@ export namespace Prisma {
     rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
+    maxDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
+    maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
+    generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CarrierUncheckedUpdateWithoutCountiesInput = {
@@ -5837,6 +6021,11 @@ export namespace Prisma {
     rating?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
+    maxDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    minDwelling?: NullableIntFieldUpdateOperationsInput | number | null
+    maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
+    maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
+    generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CountyUpsertWithoutCarriersInput = {

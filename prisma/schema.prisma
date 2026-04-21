@@ -16,12 +16,17 @@ model County {
 }
 
 model Carrier {
-  id        Int             @id @default(autoincrement())
-  name      String          @unique
-  rating    String
-  type      String          @default("Admitted")
-  website   String?
-  counties  CarrierCounty[]
+  id             Int             @id @default(autoincrement())
+  name           String          @unique
+  rating         String
+  type           String          @default("Admitted")
+  website        String?
+  maxDwelling    Int?
+  minDwelling    Int?
+  maxHomeAge     Int?
+  maxRoofAge     Int?
+  generalUwNotes String?
+  counties       CarrierCounty[]
 }
 
 model CarrierCounty {

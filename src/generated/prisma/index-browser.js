@@ -131,7 +131,12 @@ exports.Prisma.CarrierScalarFieldEnum = {
   name: 'name',
   rating: 'rating',
   type: 'type',
-  website: 'website'
+  website: 'website',
+  maxDwelling: 'maxDwelling',
+  minDwelling: 'minDwelling',
+  maxHomeAge: 'maxHomeAge',
+  maxRoofAge: 'maxRoofAge',
+  generalUwNotes: 'generalUwNotes'
 };
 
 exports.Prisma.CarrierCountyScalarFieldEnum = {

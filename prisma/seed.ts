@@ -9,30 +9,158 @@ const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
 const prisma = new PrismaClient({ adapter });
 
 // ──────────────────────────────────────────────────────────
-// CARRIERS — populated in Step 5
+// CARRIERS
 // ──────────────────────────────────────────────────────────
 const CARRIERS: Array<{
   name: string;
   rating: string;
   type: "Admitted" | "E&S";
   website: string | null;
+  maxDwelling: number | null;
+  minDwelling: number | null;
+  maxHomeAge: number | null;
+  maxRoofAge: number | null;
+  generalUwNotes: string | null;
 }> = [
-  { name: "Frontline",          rating: "BBB+ (Kroll)",    type: "Admitted", website: null },
-  { name: "Allied Trust",       rating: "A (Demotech)",    type: "Admitted", website: null },
-  { name: "Markel (J&J)",       rating: "A (AM Best)",     type: "Admitted", website: null },
-  { name: "Markel (RPS)",       rating: "A (AM Best)",     type: "Admitted", website: null },
-  { name: "American Integrity", rating: "A (Demotech)",    type: "Admitted", website: null },
-  { name: "Heritage",           rating: "A (Demotech)",    type: "Admitted", website: null },
-  { name: "Safeport",           rating: "A- (AM Best)",    type: "Admitted", website: null },
-  { name: "Occidental",         rating: "A- (AM Best)",    type: "Admitted", website: null },
-  { name: "Hartford",           rating: "A (AM Best)",     type: "Admitted", website: null },
-  { name: "ICAT",               rating: "A (AM Best)",     type: "E&S",      website: null },
-  { name: "Swyfft",             rating: "A (AM Best)",     type: "E&S",      website: null },
-  { name: "J&J",                rating: "A (AM Best)",     type: "E&S",      website: null },
+  {
+    name: "Frontline",
+    rating: "BBB+ (Kroll)",
+    type: "Admitted",
+    website: null,
+    maxDwelling: 1000,
+    minDwelling: 350,
+    maxHomeAge: null,
+    maxRoofAge: null,
+    generalUwNotes:
+      "Most competitive on homes <20 yrs. Does not write isolated islands (e.g., Bald Head). Less competitive in territory 120. $1M+ requires UW referral.",
+  },
+  {
+    name: "Allied Trust",
+    rating: "A (Demotech)",
+    type: "Admitted",
+    website: null,
+    maxDwelling: null,
+    minDwelling: null,
+    maxHomeAge: null,
+    maxRoofAge: null,
+    generalUwNotes: null,
+  },
+  {
+    name: "Markel (J&J)",
+    rating: "A (AM Best)",
+    type: "Admitted",
+    website: null,
+    maxDwelling: 1500,
+    minDwelling: 80,
+    maxHomeAge: 60,
+    maxRoofAge: 20,
+    generalUwNotes:
+      "50+ yrs requires UW approval. <40 yr wiring, plumbing & heating updates required. Does NOT write 1980s homes (use Markel RPS). Not eligible for tenant-occupied (use Markel RPS).",
+  },
+  {
+    name: "Markel (RPS)",
+    rating: "A (AM Best)",
+    type: "Admitted",
+    website: null,
+    maxDwelling: 1500,
+    minDwelling: 80,
+    maxHomeAge: 60,
+    maxRoofAge: 20,
+    generalUwNotes:
+      "50+ yrs requires UW approval. <40 yr wiring, plumbing & heating updates required. Writes 1980s homes and tenant-occupied risks.",
+  },
+  {
+    name: "American Integrity",
+    rating: "A (Demotech)",
+    type: "Admitted",
+    website: null,
+    maxDwelling: null,
+    minDwelling: null,
+    maxHomeAge: null,
+    maxRoofAge: null,
+    generalUwNotes: null,
+  },
+  {
+    name: "Heritage",
+    rating: "A (Demotech)",
+    type: "Admitted",
+    website: null,
+    maxDwelling: null,
+    minDwelling: null,
+    maxHomeAge: null,
+    maxRoofAge: null,
+    generalUwNotes: null,
+  },
+  {
+    name: "Safeport",
+    rating: "A- (AM Best)",
+    type: "Admitted",
+    website: null,
+    maxDwelling: null,
+    minDwelling: null,
+    maxHomeAge: null,
+    maxRoofAge: null,
+    generalUwNotes: null,
+  },
+  {
+    name: "Occidental",
+    rating: "A- (AM Best)",
+    type: "Admitted",
+    website: null,
+    maxDwelling: null,
+    minDwelling: null,
+    maxHomeAge: null,
+    maxRoofAge: null,
+    generalUwNotes: null,
+  },
+  {
+    name: "Hartford",
+    rating: "A (AM Best)",
+    type: "Admitted",
+    website: null,
+    maxDwelling: null,
+    minDwelling: null,
+    maxHomeAge: null,
+    maxRoofAge: null,
+    generalUwNotes: null,
+  },
+  {
+    name: "ICAT",
+    rating: "A (AM Best)",
+    type: "E&S",
+    website: null,
+    maxDwelling: null,
+    minDwelling: null,
+    maxHomeAge: null,
+    maxRoofAge: null,
+    generalUwNotes: null,
+  },
+  {
+    name: "Swyfft",
+    rating: "A (AM Best)",
+    type: "E&S",
+    website: null,
+    maxDwelling: null,
+    minDwelling: null,
+    maxHomeAge: null,
+    maxRoofAge: null,
+    generalUwNotes: null,
+  },
+  {
+    name: "J&J",
+    rating: "A (AM Best)",
+    type: "E&S",
+    website: null,
+    maxDwelling: null,
+    minDwelling: null,
+    maxHomeAge: null,
+    maxRoofAge: null,
+    generalUwNotes: null,
+  },
 ];
 
 // ──────────────────────────────────────────────────────────
-// APPETITES — populated in Step 7
+// APPETITES
 // ──────────────────────────────────────────────────────────
 const APPETITES: Array<{
   carrierName: string;
@@ -45,7 +173,35 @@ const APPETITES: Array<{
   maxProtectionClass: number | null;
   uwNotes: string | null;
 }> = [
-  // empty for now
+  // ─── Frontline ───
+  { carrierName: "Frontline", countyName: "Brunswick",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "1%, 2%, or 5% wind/hail or named storm deductible", minDwelling: null, constructionNote: "Frame & masonry veneer (hardiplank gets MV credit)", maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Frontline", countyName: "New Hanover", appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "1%, 2%, or 5% wind/hail or named storm deductible", minDwelling: null, constructionNote: "Frame & masonry veneer (hardiplank gets MV credit)", maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Frontline", countyName: "Carteret",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "1%, 2%, or 5% wind/hail or named storm deductible", minDwelling: null, constructionNote: "Frame & masonry veneer (hardiplank gets MV credit)", maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Frontline", countyName: "Dare",        appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "1%, 2%, or 5% wind/hail or named storm deductible", minDwelling: null, constructionNote: "Frame & masonry veneer (hardiplank gets MV credit)", maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Frontline", countyName: "Onslow",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "1%, 2%, or 5% wind/hail or named storm deductible", minDwelling: null, constructionNote: "Frame & masonry veneer (hardiplank gets MV credit)", maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Frontline", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "1%, 2%, or 5% wind/hail or named storm deductible", minDwelling: null, constructionNote: "Frame & masonry veneer (hardiplank gets MV credit)", maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Frontline", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "1%, 2%, or 5% wind/hail or named storm deductible", minDwelling: null, constructionNote: "Frame & masonry veneer (hardiplank gets MV credit)", maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Frontline", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "1%, 2%, or 5% wind/hail or named storm deductible", minDwelling: null, constructionNote: "Frame & masonry veneer (hardiplank gets MV credit)", maxProtectionClass: null, uwNotes: null },
+
+  // ─── Markel (J&J) ───
+  { carrierName: "Markel (J&J)", countyName: "Brunswick",   appetiteLevel: "STRONG",   windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: "Strong on Oak Island (28465). Ineligible in 28461 (Southport, Bald Head, parts of Boiling Springs Lakes)." },
+  { carrierName: "Markel (J&J)", countyName: "New Hanover", appetiteLevel: "STRONG",   windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: "Strong in Wilmington." },
+  { carrierName: "Markel (J&J)", countyName: "Carteret",    appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Markel (J&J)", countyName: "Dare",        appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Markel (J&J)", countyName: "Onslow",      appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Markel (J&J)", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Markel (J&J)", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Markel (J&J)", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+
+  // ─── Markel (RPS) ───
+  { carrierName: "Markel (RPS)", countyName: "Brunswick",   appetiteLevel: "STRONG",   windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: "Strong on Oak Island (28465). Ineligible in 28461 (Southport, Bald Head, parts of Boiling Springs Lakes)." },
+  { carrierName: "Markel (RPS)", countyName: "New Hanover", appetiteLevel: "STRONG",   windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: "Strong in Wilmington." },
+  { carrierName: "Markel (RPS)", countyName: "Carteret",    appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Markel (RPS)", countyName: "Dare",        appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Markel (RPS)", countyName: "Onslow",      appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Markel (RPS)", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Markel (RPS)", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Markel (RPS)", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
 ];
 
 // ──────────────────────────────────────────────────────────
@@ -68,7 +224,16 @@ async function seedCarriers() {
   for (const c of CARRIERS) {
     await prisma.carrier.upsert({
       where: { name: c.name },
-      update: { rating: c.rating, type: c.type, website: c.website },
+      update: {
+        rating: c.rating,
+        type: c.type,
+        website: c.website,
+        maxDwelling: c.maxDwelling,
+        minDwelling: c.minDwelling,
+        maxHomeAge: c.maxHomeAge,
+        maxRoofAge: c.maxRoofAge,
+        generalUwNotes: c.generalUwNotes,
+      },
       create: c,
     });
   }
@@ -78,12 +243,8 @@ async function seedCarriers() {
 async function seedAppetites() {
   console.log("Seeding appetites...");
   for (const a of APPETITES) {
-    const carrier = await prisma.carrier.findUnique({
-      where: { name: a.carrierName },
-    });
-    const county = await prisma.county.findUnique({
-      where: { name: a.countyName },
-    });
+    const carrier = await prisma.carrier.findUnique({ where: { name: a.carrierName } });
+    const county = await prisma.county.findUnique({ where: { name: a.countyName } });
 
     if (!carrier) {
       console.error(`❌ Carrier not found: ${a.carrierName}`);
@@ -95,9 +256,7 @@ async function seedAppetites() {
     }
 
     await prisma.carrierCounty.upsert({
-      where: {
-        carrierId_countyId: { carrierId: carrier.id, countyId: county.id },
-      },
+      where: { carrierId_countyId: { carrierId: carrier.id, countyId: county.id } },
       update: {
         appetiteLevel: a.appetiteLevel,
         windHailStance: a.windHailStance,
@@ -123,9 +282,6 @@ async function seedAppetites() {
   console.log(`Seeded ${APPETITES.length} appetite records.`);
 }
 
-// ──────────────────────────────────────────────────────────
-// MAIN
-// ──────────────────────────────────────────────────────────
 async function main() {
   await seedCounties();
   await seedCarriers();
