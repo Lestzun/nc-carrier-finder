@@ -39,11 +39,12 @@ const CARRIERS: Array<{
     rating: "A (Demotech)",
     type: "Admitted",
     website: null,
-    maxDwelling: null,
-    minDwelling: null,
+    maxDwelling: 3000,
+    minDwelling: 200,
     maxHomeAge: null,
-    maxRoofAge: null,
-    generalUwNotes: null,
+    maxRoofAge: 10,
+    generalUwNotes:
+      "Max TIV $3M (not Cov A). Writes all coastal counties and territory codes. Metal roofs OK up to 15 yrs, but require 2% wind/hail deductible regardless of location. Within 5 miles of coast: 2% wind/hail deductible.",
   },
   {
     name: "Markel (J&J)",
@@ -202,6 +203,16 @@ const APPETITES: Array<{
   { carrierName: "Markel (RPS)", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "Markel (RPS)", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "Markel (RPS)", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded — pair with NCIUA Beach Plan", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+
+  // ─── Allied Trust ───
+  { carrierName: "Allied Trust", countyName: "Brunswick",   appetiteLevel: "STRONG",   windHailStance: "INCLUDED", windHailDetail: "2% deductible within 5 mi of coast or metal roofs",  minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: "Most competitive 5–10 miles inland (Leland/Shallotte area)." },
+  { carrierName: "Allied Trust", countyName: "New Hanover", appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% deductible within 5 mi of coast or metal roofs",  minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Allied Trust", countyName: "Carteret",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% deductible within 5 mi of coast or metal roofs",  minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Allied Trust", countyName: "Dare",        appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% deductible within 5 mi of coast or metal roofs",  minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Allied Trust", countyName: "Onslow",      appetiteLevel: "STRONG",   windHailStance: "INCLUDED", windHailDetail: "2% deductible within 5 mi of coast or metal roofs",  minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: "Most competitive 5–10 miles inland." },
+  { carrierName: "Allied Trust", countyName: "Pender",      appetiteLevel: "STRONG",   windHailStance: "INCLUDED", windHailDetail: "2% deductible within 5 mi of coast or metal roofs",  minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: "Most competitive 5–10 miles inland." },
+  { carrierName: "Allied Trust", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% deductible within 5 mi of coast or metal roofs",  minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Allied Trust", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% deductible within 5 mi of coast or metal roofs",  minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
 ];
 
 // ──────────────────────────────────────────────────────────
