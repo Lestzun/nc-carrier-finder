@@ -21,6 +21,10 @@ const CARRIERS: Array<{
   maxHomeAge: number | null;
   maxRoofAge: number | null;
   generalUwNotes: string | null;
+  writesPrimary: boolean;
+  writesSecondary: boolean;
+  writesShortTermRental: boolean;
+  writesTenantOccupied: boolean;
 }> = [
   {
     name: "Frontline",
@@ -33,6 +37,10 @@ const CARRIERS: Array<{
     maxRoofAge: null,
     generalUwNotes:
       "Most competitive on homes <20 yrs. Does not write isolated islands (e.g., Bald Head). Less competitive in territory 120. $1M+ requires UW referral.",
+    writesPrimary: true,
+    writesSecondary: true,
+    writesShortTermRental: false,
+    writesTenantOccupied: false,
   },
   {
     name: "Allied Trust",
@@ -44,7 +52,11 @@ const CARRIERS: Array<{
     maxHomeAge: null,
     maxRoofAge: 10,
     generalUwNotes:
-      "Max TIV $3M (not Cov A). Writes all coastal counties and territory codes. Metal roofs OK up to 15 yrs, but require 2% wind/hail deductible regardless of location. Within 5 miles of coast: 2% wind/hail deductible.",
+      "Primary residences only. Max TIV $3M (not Cov A). Writes all coastal counties and territory codes. Metal roofs OK up to 15 yrs, but require 2% wind/hail deductible regardless of location. Within 5 miles of coast: 2% wind/hail deductible.",
+    writesPrimary: true,
+    writesSecondary: false,
+    writesShortTermRental: false,
+    writesTenantOccupied: false,
   },
   {
     name: "Markel (J&J)",
@@ -57,6 +69,10 @@ const CARRIERS: Array<{
     maxRoofAge: 20,
     generalUwNotes:
       "50+ yrs requires UW approval. <40 yr wiring, plumbing & heating updates required. Does NOT write 1980s homes (use Markel RPS). Not eligible for tenant-occupied (use Markel RPS).",
+    writesPrimary: true,
+    writesSecondary: true,
+    writesShortTermRental: true,
+    writesTenantOccupied: false,
   },
   {
     name: "Markel (RPS)",
@@ -69,6 +85,10 @@ const CARRIERS: Array<{
     maxRoofAge: 20,
     generalUwNotes:
       "50+ yrs requires UW approval. <40 yr wiring, plumbing & heating updates required. Writes 1980s homes and tenant-occupied risks.",
+    writesPrimary: true,
+    writesSecondary: true,
+    writesShortTermRental: true,
+    writesTenantOccupied: true,
   },
   {
     name: "American Integrity",
@@ -80,6 +100,10 @@ const CARRIERS: Array<{
     maxHomeAge: null,
     maxRoofAge: null,
     generalUwNotes: null,
+    writesPrimary: true,
+    writesSecondary: false,
+    writesShortTermRental: false,
+    writesTenantOccupied: false,
   },
   {
     name: "Heritage",
@@ -91,6 +115,10 @@ const CARRIERS: Array<{
     maxHomeAge: null,
     maxRoofAge: null,
     generalUwNotes: null,
+    writesPrimary: true,
+    writesSecondary: false,
+    writesShortTermRental: false,
+    writesTenantOccupied: false,
   },
   {
     name: "Safeport",
@@ -102,17 +130,26 @@ const CARRIERS: Array<{
     maxHomeAge: null,
     maxRoofAge: null,
     generalUwNotes: null,
+    writesPrimary: true,
+    writesSecondary: false,
+    writesShortTermRental: false,
+    writesTenantOccupied: false,
   },
   {
     name: "Occidental",
     rating: "A- (AM Best)",
     type: "Admitted",
     website: null,
-    maxDwelling: null,
-    minDwelling: null,
+    maxDwelling: 1250,
+    minDwelling: 75,
     maxHomeAge: null,
-    maxRoofAge: null,
-    generalUwNotes: null,
+    maxRoofAge: 20,
+    generalUwNotes:
+      "Writes all NC. Furnace must be updated within last 30 yrs. Within 5 miles of coast: 5% wind/hail deductible minimum. Writes primary, secondary, and rentals.",
+    writesPrimary: true,
+    writesSecondary: true,
+    writesShortTermRental: true,
+    writesTenantOccupied: true,
   },
   {
     name: "Hartford",
@@ -124,6 +161,10 @@ const CARRIERS: Array<{
     maxHomeAge: null,
     maxRoofAge: null,
     generalUwNotes: null,
+    writesPrimary: true,
+    writesSecondary: false,
+    writesShortTermRental: false,
+    writesTenantOccupied: false,
   },
   {
     name: "ICAT",
@@ -135,6 +176,10 @@ const CARRIERS: Array<{
     maxHomeAge: null,
     maxRoofAge: null,
     generalUwNotes: null,
+    writesPrimary: true,
+    writesSecondary: false,
+    writesShortTermRental: false,
+    writesTenantOccupied: false,
   },
   {
     name: "Swyfft",
@@ -146,6 +191,10 @@ const CARRIERS: Array<{
     maxHomeAge: null,
     maxRoofAge: null,
     generalUwNotes: null,
+    writesPrimary: true,
+    writesSecondary: false,
+    writesShortTermRental: false,
+    writesTenantOccupied: false,
   },
   {
     name: "J&J",
@@ -157,6 +206,10 @@ const CARRIERS: Array<{
     maxHomeAge: null,
     maxRoofAge: null,
     generalUwNotes: null,
+    writesPrimary: true,
+    writesSecondary: false,
+    writesShortTermRental: false,
+    writesTenantOccupied: false,
   },
 ];
 
@@ -213,6 +266,16 @@ const APPETITES: Array<{
   { carrierName: "Allied Trust", countyName: "Pender",      appetiteLevel: "STRONG",   windHailStance: "INCLUDED", windHailDetail: "2% deductible within 5 mi of coast or metal roofs",  minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: "Most competitive 5–10 miles inland." },
   { carrierName: "Allied Trust", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% deductible within 5 mi of coast or metal roofs",  minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "Allied Trust", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% deductible within 5 mi of coast or metal roofs",  minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+
+  // ─── Occidental ───
+  { carrierName: "Occidental", countyName: "Brunswick",   appetiteLevel: "STRONG",   windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: "Most competitive toward SC line." },
+  { carrierName: "Occidental", countyName: "New Hanover", appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Occidental", countyName: "Carteret",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Occidental", countyName: "Dare",        appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Occidental", countyName: "Onslow",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Occidental", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Occidental", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Occidental", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
 ];
 
 // ──────────────────────────────────────────────────────────
@@ -244,6 +307,10 @@ async function seedCarriers() {
         maxHomeAge: c.maxHomeAge,
         maxRoofAge: c.maxRoofAge,
         generalUwNotes: c.generalUwNotes,
+        writesPrimary: c.writesPrimary,
+        writesSecondary: c.writesSecondary,
+        writesShortTermRental: c.writesShortTermRental,
+        writesTenantOccupied: c.writesTenantOccupied,
       },
       create: c,
     });

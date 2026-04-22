@@ -2231,6 +2231,10 @@ export namespace Prisma {
     maxHomeAge: number | null
     maxRoofAge: number | null
     generalUwNotes: string | null
+    writesPrimary: boolean | null
+    writesSecondary: boolean | null
+    writesShortTermRental: boolean | null
+    writesTenantOccupied: boolean | null
   }
 
   export type CarrierMaxAggregateOutputType = {
@@ -2244,6 +2248,10 @@ export namespace Prisma {
     maxHomeAge: number | null
     maxRoofAge: number | null
     generalUwNotes: string | null
+    writesPrimary: boolean | null
+    writesSecondary: boolean | null
+    writesShortTermRental: boolean | null
+    writesTenantOccupied: boolean | null
   }
 
   export type CarrierCountAggregateOutputType = {
@@ -2257,6 +2265,10 @@ export namespace Prisma {
     maxHomeAge: number
     maxRoofAge: number
     generalUwNotes: number
+    writesPrimary: number
+    writesSecondary: number
+    writesShortTermRental: number
+    writesTenantOccupied: number
     _all: number
   }
 
@@ -2288,6 +2300,10 @@ export namespace Prisma {
     maxHomeAge?: true
     maxRoofAge?: true
     generalUwNotes?: true
+    writesPrimary?: true
+    writesSecondary?: true
+    writesShortTermRental?: true
+    writesTenantOccupied?: true
   }
 
   export type CarrierMaxAggregateInputType = {
@@ -2301,6 +2317,10 @@ export namespace Prisma {
     maxHomeAge?: true
     maxRoofAge?: true
     generalUwNotes?: true
+    writesPrimary?: true
+    writesSecondary?: true
+    writesShortTermRental?: true
+    writesTenantOccupied?: true
   }
 
   export type CarrierCountAggregateInputType = {
@@ -2314,6 +2334,10 @@ export namespace Prisma {
     maxHomeAge?: true
     maxRoofAge?: true
     generalUwNotes?: true
+    writesPrimary?: true
+    writesSecondary?: true
+    writesShortTermRental?: true
+    writesTenantOccupied?: true
     _all?: true
   }
 
@@ -2414,6 +2438,10 @@ export namespace Prisma {
     maxHomeAge: number | null
     maxRoofAge: number | null
     generalUwNotes: string | null
+    writesPrimary: boolean
+    writesSecondary: boolean
+    writesShortTermRental: boolean
+    writesTenantOccupied: boolean
     _count: CarrierCountAggregateOutputType | null
     _avg: CarrierAvgAggregateOutputType | null
     _sum: CarrierSumAggregateOutputType | null
@@ -2446,6 +2474,10 @@ export namespace Prisma {
     maxHomeAge?: boolean
     maxRoofAge?: boolean
     generalUwNotes?: boolean
+    writesPrimary?: boolean
+    writesSecondary?: boolean
+    writesShortTermRental?: boolean
+    writesTenantOccupied?: boolean
     counties?: boolean | Carrier$countiesArgs<ExtArgs>
     _count?: boolean | CarrierCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["carrier"]>
@@ -2461,6 +2493,10 @@ export namespace Prisma {
     maxHomeAge?: boolean
     maxRoofAge?: boolean
     generalUwNotes?: boolean
+    writesPrimary?: boolean
+    writesSecondary?: boolean
+    writesShortTermRental?: boolean
+    writesTenantOccupied?: boolean
   }, ExtArgs["result"]["carrier"]>
 
   export type CarrierSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2474,6 +2510,10 @@ export namespace Prisma {
     maxHomeAge?: boolean
     maxRoofAge?: boolean
     generalUwNotes?: boolean
+    writesPrimary?: boolean
+    writesSecondary?: boolean
+    writesShortTermRental?: boolean
+    writesTenantOccupied?: boolean
   }, ExtArgs["result"]["carrier"]>
 
   export type CarrierSelectScalar = {
@@ -2487,9 +2527,13 @@ export namespace Prisma {
     maxHomeAge?: boolean
     maxRoofAge?: boolean
     generalUwNotes?: boolean
+    writesPrimary?: boolean
+    writesSecondary?: boolean
+    writesShortTermRental?: boolean
+    writesTenantOccupied?: boolean
   }
 
-  export type CarrierOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "rating" | "type" | "website" | "maxDwelling" | "minDwelling" | "maxHomeAge" | "maxRoofAge" | "generalUwNotes", ExtArgs["result"]["carrier"]>
+  export type CarrierOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "rating" | "type" | "website" | "maxDwelling" | "minDwelling" | "maxHomeAge" | "maxRoofAge" | "generalUwNotes" | "writesPrimary" | "writesSecondary" | "writesShortTermRental" | "writesTenantOccupied", ExtArgs["result"]["carrier"]>
   export type CarrierInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     counties?: boolean | Carrier$countiesArgs<ExtArgs>
     _count?: boolean | CarrierCountOutputTypeDefaultArgs<ExtArgs>
@@ -2513,6 +2557,10 @@ export namespace Prisma {
       maxHomeAge: number | null
       maxRoofAge: number | null
       generalUwNotes: string | null
+      writesPrimary: boolean
+      writesSecondary: boolean
+      writesShortTermRental: boolean
+      writesTenantOccupied: boolean
     }, ExtArgs["result"]["carrier"]>
     composites: {}
   }
@@ -2947,6 +2995,10 @@ export namespace Prisma {
     readonly maxHomeAge: FieldRef<"Carrier", 'Int'>
     readonly maxRoofAge: FieldRef<"Carrier", 'Int'>
     readonly generalUwNotes: FieldRef<"Carrier", 'String'>
+    readonly writesPrimary: FieldRef<"Carrier", 'Boolean'>
+    readonly writesSecondary: FieldRef<"Carrier", 'Boolean'>
+    readonly writesShortTermRental: FieldRef<"Carrier", 'Boolean'>
+    readonly writesTenantOccupied: FieldRef<"Carrier", 'Boolean'>
   }
     
 
@@ -4614,7 +4666,11 @@ export namespace Prisma {
     minDwelling: 'minDwelling',
     maxHomeAge: 'maxHomeAge',
     maxRoofAge: 'maxRoofAge',
-    generalUwNotes: 'generalUwNotes'
+    generalUwNotes: 'generalUwNotes',
+    writesPrimary: 'writesPrimary',
+    writesSecondary: 'writesSecondary',
+    writesShortTermRental: 'writesShortTermRental',
+    writesTenantOccupied: 'writesTenantOccupied'
   };
 
   export type CarrierScalarFieldEnum = (typeof CarrierScalarFieldEnum)[keyof typeof CarrierScalarFieldEnum]
@@ -4793,6 +4849,10 @@ export namespace Prisma {
     maxHomeAge?: IntNullableFilter<"Carrier"> | number | null
     maxRoofAge?: IntNullableFilter<"Carrier"> | number | null
     generalUwNotes?: StringNullableFilter<"Carrier"> | string | null
+    writesPrimary?: BoolFilter<"Carrier"> | boolean
+    writesSecondary?: BoolFilter<"Carrier"> | boolean
+    writesShortTermRental?: BoolFilter<"Carrier"> | boolean
+    writesTenantOccupied?: BoolFilter<"Carrier"> | boolean
     counties?: CarrierCountyListRelationFilter
   }
 
@@ -4807,6 +4867,10 @@ export namespace Prisma {
     maxHomeAge?: SortOrderInput | SortOrder
     maxRoofAge?: SortOrderInput | SortOrder
     generalUwNotes?: SortOrderInput | SortOrder
+    writesPrimary?: SortOrder
+    writesSecondary?: SortOrder
+    writesShortTermRental?: SortOrder
+    writesTenantOccupied?: SortOrder
     counties?: CarrierCountyOrderByRelationAggregateInput
   }
 
@@ -4824,6 +4888,10 @@ export namespace Prisma {
     maxHomeAge?: IntNullableFilter<"Carrier"> | number | null
     maxRoofAge?: IntNullableFilter<"Carrier"> | number | null
     generalUwNotes?: StringNullableFilter<"Carrier"> | string | null
+    writesPrimary?: BoolFilter<"Carrier"> | boolean
+    writesSecondary?: BoolFilter<"Carrier"> | boolean
+    writesShortTermRental?: BoolFilter<"Carrier"> | boolean
+    writesTenantOccupied?: BoolFilter<"Carrier"> | boolean
     counties?: CarrierCountyListRelationFilter
   }, "id" | "name">
 
@@ -4838,6 +4906,10 @@ export namespace Prisma {
     maxHomeAge?: SortOrderInput | SortOrder
     maxRoofAge?: SortOrderInput | SortOrder
     generalUwNotes?: SortOrderInput | SortOrder
+    writesPrimary?: SortOrder
+    writesSecondary?: SortOrder
+    writesShortTermRental?: SortOrder
+    writesTenantOccupied?: SortOrder
     _count?: CarrierCountOrderByAggregateInput
     _avg?: CarrierAvgOrderByAggregateInput
     _max?: CarrierMaxOrderByAggregateInput
@@ -4859,6 +4931,10 @@ export namespace Prisma {
     maxHomeAge?: IntNullableWithAggregatesFilter<"Carrier"> | number | null
     maxRoofAge?: IntNullableWithAggregatesFilter<"Carrier"> | number | null
     generalUwNotes?: StringNullableWithAggregatesFilter<"Carrier"> | string | null
+    writesPrimary?: BoolWithAggregatesFilter<"Carrier"> | boolean
+    writesSecondary?: BoolWithAggregatesFilter<"Carrier"> | boolean
+    writesShortTermRental?: BoolWithAggregatesFilter<"Carrier"> | boolean
+    writesTenantOccupied?: BoolWithAggregatesFilter<"Carrier"> | boolean
   }
 
   export type CarrierCountyWhereInput = {
@@ -5005,6 +5081,10 @@ export namespace Prisma {
     maxHomeAge?: number | null
     maxRoofAge?: number | null
     generalUwNotes?: string | null
+    writesPrimary?: boolean
+    writesSecondary?: boolean
+    writesShortTermRental?: boolean
+    writesTenantOccupied?: boolean
     counties?: CarrierCountyCreateNestedManyWithoutCarrierInput
   }
 
@@ -5019,6 +5099,10 @@ export namespace Prisma {
     maxHomeAge?: number | null
     maxRoofAge?: number | null
     generalUwNotes?: string | null
+    writesPrimary?: boolean
+    writesSecondary?: boolean
+    writesShortTermRental?: boolean
+    writesTenantOccupied?: boolean
     counties?: CarrierCountyUncheckedCreateNestedManyWithoutCarrierInput
   }
 
@@ -5032,6 +5116,10 @@ export namespace Prisma {
     maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
     maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
     generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    writesPrimary?: BoolFieldUpdateOperationsInput | boolean
+    writesSecondary?: BoolFieldUpdateOperationsInput | boolean
+    writesShortTermRental?: BoolFieldUpdateOperationsInput | boolean
+    writesTenantOccupied?: BoolFieldUpdateOperationsInput | boolean
     counties?: CarrierCountyUpdateManyWithoutCarrierNestedInput
   }
 
@@ -5046,6 +5134,10 @@ export namespace Prisma {
     maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
     maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
     generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    writesPrimary?: BoolFieldUpdateOperationsInput | boolean
+    writesSecondary?: BoolFieldUpdateOperationsInput | boolean
+    writesShortTermRental?: BoolFieldUpdateOperationsInput | boolean
+    writesTenantOccupied?: BoolFieldUpdateOperationsInput | boolean
     counties?: CarrierCountyUncheckedUpdateManyWithoutCarrierNestedInput
   }
 
@@ -5060,6 +5152,10 @@ export namespace Prisma {
     maxHomeAge?: number | null
     maxRoofAge?: number | null
     generalUwNotes?: string | null
+    writesPrimary?: boolean
+    writesSecondary?: boolean
+    writesShortTermRental?: boolean
+    writesTenantOccupied?: boolean
   }
 
   export type CarrierUpdateManyMutationInput = {
@@ -5072,6 +5168,10 @@ export namespace Prisma {
     maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
     maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
     generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    writesPrimary?: BoolFieldUpdateOperationsInput | boolean
+    writesSecondary?: BoolFieldUpdateOperationsInput | boolean
+    writesShortTermRental?: BoolFieldUpdateOperationsInput | boolean
+    writesTenantOccupied?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type CarrierUncheckedUpdateManyInput = {
@@ -5085,6 +5185,10 @@ export namespace Prisma {
     maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
     maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
     generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    writesPrimary?: BoolFieldUpdateOperationsInput | boolean
+    writesSecondary?: BoolFieldUpdateOperationsInput | boolean
+    writesShortTermRental?: BoolFieldUpdateOperationsInput | boolean
+    writesTenantOccupied?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type CarrierCountyCreateInput = {
@@ -5331,6 +5435,10 @@ export namespace Prisma {
     maxHomeAge?: SortOrder
     maxRoofAge?: SortOrder
     generalUwNotes?: SortOrder
+    writesPrimary?: SortOrder
+    writesSecondary?: SortOrder
+    writesShortTermRental?: SortOrder
+    writesTenantOccupied?: SortOrder
   }
 
   export type CarrierAvgOrderByAggregateInput = {
@@ -5352,6 +5460,10 @@ export namespace Prisma {
     maxHomeAge?: SortOrder
     maxRoofAge?: SortOrder
     generalUwNotes?: SortOrder
+    writesPrimary?: SortOrder
+    writesSecondary?: SortOrder
+    writesShortTermRental?: SortOrder
+    writesTenantOccupied?: SortOrder
   }
 
   export type CarrierMinOrderByAggregateInput = {
@@ -5365,6 +5477,10 @@ export namespace Prisma {
     maxHomeAge?: SortOrder
     maxRoofAge?: SortOrder
     generalUwNotes?: SortOrder
+    writesPrimary?: SortOrder
+    writesSecondary?: SortOrder
+    writesShortTermRental?: SortOrder
+    writesTenantOccupied?: SortOrder
   }
 
   export type CarrierSumOrderByAggregateInput = {
@@ -5956,6 +6072,10 @@ export namespace Prisma {
     maxHomeAge?: number | null
     maxRoofAge?: number | null
     generalUwNotes?: string | null
+    writesPrimary?: boolean
+    writesSecondary?: boolean
+    writesShortTermRental?: boolean
+    writesTenantOccupied?: boolean
   }
 
   export type CarrierUncheckedCreateWithoutCountiesInput = {
@@ -5969,6 +6089,10 @@ export namespace Prisma {
     maxHomeAge?: number | null
     maxRoofAge?: number | null
     generalUwNotes?: string | null
+    writesPrimary?: boolean
+    writesSecondary?: boolean
+    writesShortTermRental?: boolean
+    writesTenantOccupied?: boolean
   }
 
   export type CarrierCreateOrConnectWithoutCountiesInput = {
@@ -6013,6 +6137,10 @@ export namespace Prisma {
     maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
     maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
     generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    writesPrimary?: BoolFieldUpdateOperationsInput | boolean
+    writesSecondary?: BoolFieldUpdateOperationsInput | boolean
+    writesShortTermRental?: BoolFieldUpdateOperationsInput | boolean
+    writesTenantOccupied?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type CarrierUncheckedUpdateWithoutCountiesInput = {
@@ -6026,6 +6154,10 @@ export namespace Prisma {
     maxHomeAge?: NullableIntFieldUpdateOperationsInput | number | null
     maxRoofAge?: NullableIntFieldUpdateOperationsInput | number | null
     generalUwNotes?: NullableStringFieldUpdateOperationsInput | string | null
+    writesPrimary?: BoolFieldUpdateOperationsInput | boolean
+    writesSecondary?: BoolFieldUpdateOperationsInput | boolean
+    writesShortTermRental?: BoolFieldUpdateOperationsInput | boolean
+    writesTenantOccupied?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type CountyUpsertWithoutCarriersInput = {
