@@ -125,15 +125,16 @@ const CARRIERS: Array<{
     rating: "A- (AM Best)",
     type: "Admitted",
     website: null,
-    maxDwelling: null,
-    minDwelling: null,
+    maxDwelling: 1250,
+    minDwelling: 75,
     maxHomeAge: null,
-    maxRoofAge: null,
-    generalUwNotes: null,
+    maxRoofAge: 20,
+    generalUwNotes:
+      "Writes all NC with wind included only (no wind-excluded product). Furnace must be updated within last 30 yrs. Within 5 miles of coast: 5% wind/hail deductible minimum. Writes primary, secondary, and rentals.",
     writesPrimary: true,
-    writesSecondary: false,
-    writesShortTermRental: false,
-    writesTenantOccupied: false,
+    writesSecondary: true,
+    writesShortTermRental: true,
+    writesTenantOccupied: true,
   },
   {
     name: "Occidental",
@@ -276,6 +277,16 @@ const APPETITES: Array<{
   { carrierName: "Occidental", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "Occidental", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "Occidental", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+
+  // ─── Safeport ───
+  { carrierName: "Safeport", countyName: "Brunswick",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Safeport", countyName: "New Hanover", appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Safeport", countyName: "Carteret",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Safeport", countyName: "Dare",        appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Safeport", countyName: "Onslow",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Safeport", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Safeport", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Safeport", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
 ];
 
 // ──────────────────────────────────────────────────────────
