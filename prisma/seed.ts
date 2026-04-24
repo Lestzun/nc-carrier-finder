@@ -182,20 +182,21 @@ const CARRIERS: Array<{
     writesShortTermRental: false,
     writesTenantOccupied: false,
   },
-  {
+{
     name: "Swyfft",
     rating: "A (AM Best)",
     type: "E&S",
     website: null,
-    maxDwelling: null,
-    minDwelling: null,
-    maxHomeAge: null,
-    maxRoofAge: null,
-    generalUwNotes: null,
+    maxDwelling: 2000,
+    minDwelling: 125,
+    maxHomeAge: 76,
+    maxRoofAge: 25,
+    generalUwNotes:
+      "Access through Swyfft wholesale broker. Swyfft fronts two products: Vave (primary) and Benchmark Specialty. VAVE: min $125K, built 1950+, primary/secondary/secondary+rentals up to 21 wks/tenant annual. BENCHMARK: min $150K, built within last 100 yrs, primary/secondary only. Roof age cap: asphalt shingles <15 yrs = RCV, hurricane shingles <20 yrs = RCV, standing seam metal <35 yrs = RCV. Roofs older than those thresholds drop to ACV; max roof age 25 yrs. maxHomeAge 76 is based on 2026 (Vave 1950+ cutoff) — bump yearly.",
     writesPrimary: true,
-    writesSecondary: false,
-    writesShortTermRental: false,
-    writesTenantOccupied: false,
+    writesSecondary: true,
+    writesShortTermRental: true,
+    writesTenantOccupied: true,
   },
   {
     name: "J&J",
@@ -287,6 +288,16 @@ const APPETITES: Array<{
   { carrierName: "Safeport", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "Safeport", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "Safeport", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "5% wind/hail deductible minimum within 5 mi of coast", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+
+  // ─── Swyfft ───
+  { carrierName: "Swyfft", countyName: "Brunswick",   appetiteLevel: "STRONG",   windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Swyfft", countyName: "New Hanover", appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Swyfft", countyName: "Carteret",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Swyfft", countyName: "Dare",        appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Swyfft", countyName: "Onslow",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Swyfft", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Swyfft", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Swyfft", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
 ];
 
 // ──────────────────────────────────────────────────────────
