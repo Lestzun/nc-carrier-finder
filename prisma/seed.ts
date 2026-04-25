@@ -106,16 +106,17 @@ const CARRIERS: Array<{
     writesShortTermRental: false,
     writesTenantOccupied: false,
   },
-  {
+{
     name: "Heritage",
     rating: "A (Demotech)",
     type: "Admitted",
     website: null,
-    maxDwelling: null,
-    minDwelling: null,
-    maxHomeAge: null,
-    maxRoofAge: null,
-    generalUwNotes: null,
+    maxDwelling: 2000,
+    minDwelling: 200,
+    maxHomeAge: 100,
+    maxRoofAge: 10,
+    generalUwNotes:
+      "HO-3. Max home age 100 yrs (homes built before 1950 need proof of updates). Roof: shingle ≤10 yrs, metal ≤25 yrs. HVAC ≤20 yrs. Plumbing ≤50 yrs. Wind excluded in territory 120 (pair with NCIUA). Secondary OK only with central station fire AND burglar alarm.",
     writesPrimary: true,
     writesSecondary: false,
     writesShortTermRental: false,
@@ -309,6 +310,16 @@ const APPETITES: Array<{
   { carrierName: "American Integrity", countyName: "Pender",      appetiteLevel: "STRONG", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "American Integrity", countyName: "Currituck",   appetiteLevel: "STRONG", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "American Integrity", countyName: "Beaufort",    appetiteLevel: "STRONG", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+
+  // ─── Heritage ───
+  { carrierName: "Heritage", countyName: "Brunswick",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles. Wind excluded in territory 120.", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Heritage", countyName: "New Hanover", appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles. Wind excluded in territory 120.", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Heritage", countyName: "Carteret",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles. Wind excluded in territory 120.", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Heritage", countyName: "Dare",        appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles. Wind excluded in territory 120.", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Heritage", countyName: "Onslow",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles. Wind excluded in territory 120.", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Heritage", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles. Wind excluded in territory 120.", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Heritage", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles. Wind excluded in territory 120.", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "Heritage", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles. Wind excluded in territory 120.", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
 ];
 
 // ──────────────────────────────────────────────────────────
