@@ -95,11 +95,12 @@ const CARRIERS: Array<{
     rating: "A (Demotech)",
     type: "Admitted",
     website: null,
-    maxDwelling: null,
-    minDwelling: null,
-    maxHomeAge: null,
-    maxRoofAge: null,
-    generalUwNotes: null,
+    maxDwelling: 6000,
+    minDwelling: 200,
+    maxHomeAge: 5,
+    maxRoofAge: 10,
+    generalUwNotes:
+      "HO-5 ONLY (not HO-3). Strong on homes ≤5 yrs outside territory 120. Not competitive in territory 120 (wind can be excluded there but pricing is poor). Secondary OK only with central station alarm OR gated/limited-access community.",
     writesPrimary: true,
     writesSecondary: false,
     writesShortTermRental: false,
@@ -298,6 +299,16 @@ const APPETITES: Array<{
   { carrierName: "Swyfft", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "Swyfft", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "Swyfft", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+
+  // ─── American Integrity ───
+  { carrierName: "American Integrity", countyName: "Brunswick",   appetiteLevel: "STRONG", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "American Integrity", countyName: "New Hanover", appetiteLevel: "STRONG", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "American Integrity", countyName: "Carteret",    appetiteLevel: "STRONG", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "American Integrity", countyName: "Dare",        appetiteLevel: "STRONG", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "American Integrity", countyName: "Onslow",      appetiteLevel: "STRONG", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "American Integrity", countyName: "Pender",      appetiteLevel: "STRONG", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "American Integrity", countyName: "Currituck",   appetiteLevel: "STRONG", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "American Integrity", countyName: "Beaufort",    appetiteLevel: "STRONG", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
 ];
 
 // ──────────────────────────────────────────────────────────
