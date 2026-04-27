@@ -169,20 +169,21 @@ const CARRIERS: Array<{
     writesShortTermRental: false,
     writesTenantOccupied: false,
   },
-  {
+{
     name: "ICAT",
     rating: "A (AM Best)",
     type: "E&S",
     website: null,
-    maxDwelling: null,
-    minDwelling: null,
-    maxHomeAge: null,
-    maxRoofAge: null,
-    generalUwNotes: null,
+    maxDwelling: 3000,
+    minDwelling: 250,
+    maxHomeAge: 56,
+    maxRoofAge: 15,
+    generalUwNotes:
+      "HO-3. Access through ICAT wholesale broker (writes Victor Insurance). Roofs ≥16 yrs settle at ACV (not RCV). Dwellings ≥40 yrs require evidence of plumbing, heating, and electrical updates within last 15 yrs. NO additional amounts of insurance over $1M Cov A (Cov A is hard cap on settlement above $1M). maxHomeAge 56 is based on 2026 (1970+ cutoff) — bump yearly.",
     writesPrimary: true,
-    writesSecondary: false,
-    writesShortTermRental: false,
-    writesTenantOccupied: false,
+    writesSecondary: true,
+    writesShortTermRental: true,
+    writesTenantOccupied: true,
   },
 {
     name: "Swyfft",
@@ -320,6 +321,16 @@ const APPETITES: Array<{
   { carrierName: "Heritage", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles. Wind excluded in territory 120.", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "Heritage", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles. Wind excluded in territory 120.", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "Heritage", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "2% wind/hail + AOP deductibles. Wind excluded in territory 120.", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+
+  // ─── ICAT ───
+  { carrierName: "ICAT", countyName: "Brunswick",   appetiteLevel: "STRONG",   windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "ICAT", countyName: "New Hanover", appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "ICAT", countyName: "Carteret",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "ICAT", countyName: "Dare",        appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "ICAT", countyName: "Onslow",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "ICAT", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "ICAT", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+  { carrierName: "ICAT", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
 ];
 
 // ──────────────────────────────────────────────────────────
