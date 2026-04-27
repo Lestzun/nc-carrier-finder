@@ -154,16 +154,17 @@ const CARRIERS: Array<{
     writesShortTermRental: true,
     writesTenantOccupied: true,
   },
-  {
+{
     name: "Hartford",
     rating: "A (AM Best)",
     type: "Admitted",
     website: null,
     maxDwelling: null,
-    minDwelling: null,
-    maxHomeAge: null,
-    maxRoofAge: null,
-    generalUwNotes: null,
+    minDwelling: 150,
+    maxHomeAge: 50,
+    maxRoofAge: 20,
+    generalUwNotes:
+      "HO-3. Min dwelling $150K inland, $200K coastal counties. Max home age 50 yrs (older allowed by UW referral). $1M+ Cov A requires UW referral and central fire/burglar alarms. Risk must be ≥2,000 ft from coast (Gulf/Ocean/Bay/Sound) — strict, no exceptions. Wind always excluded in territories 110/120/130/140/150/160 (requires NCIUA companion). Secondary only if primary residence is also Hartford-insured.",
     writesPrimary: true,
     writesSecondary: false,
     writesShortTermRental: false,
@@ -331,6 +332,16 @@ const APPETITES: Array<{
   { carrierName: "ICAT", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "ICAT", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
   { carrierName: "ICAT", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "INCLUDED", windHailDetail: "AOP + wind/hail deductibles", minDwelling: null, constructionNote: null, maxProtectionClass: null, uwNotes: null },
+
+  // ─── Hartford ───
+  { carrierName: "Hartford", countyName: "Brunswick",   appetiteLevel: "STRONG",   windHailStance: "EXCLUDED", windHailDetail: "Wind excluded in territories 110-160 — pair with NCIUA Beach Plan", minDwelling: 200, constructionNote: null, maxProtectionClass: null, uwNotes: "Strong on mainland Brunswick (Leland, Shallotte, etc.). Competitive in 28465 since Markel pulled back, but 2,000-ft coast rule still applies." },
+  { carrierName: "Hartford", countyName: "New Hanover", appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded in territories 110-160 — pair with NCIUA Beach Plan", minDwelling: 200, constructionNote: null, maxProtectionClass: null, uwNotes: "Risk must be ≥2,000 ft from saltwater." },
+  { carrierName: "Hartford", countyName: "Carteret",    appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded in territories 110-160 — pair with NCIUA Beach Plan", minDwelling: 200, constructionNote: null, maxProtectionClass: null, uwNotes: "Risk must be ≥2,000 ft from saltwater." },
+  { carrierName: "Hartford", countyName: "Dare",        appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded in territories 110-160 — pair with NCIUA Beach Plan", minDwelling: 200, constructionNote: null, maxProtectionClass: null, uwNotes: "Risk must be ≥2,000 ft from saltwater. Most of Dare is barrier island — limited eligible inventory." },
+  { carrierName: "Hartford", countyName: "Onslow",      appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded in territories 110-160 — pair with NCIUA Beach Plan", minDwelling: 200, constructionNote: null, maxProtectionClass: null, uwNotes: "Risk must be ≥2,000 ft from saltwater." },
+  { carrierName: "Hartford", countyName: "Pender",      appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded in territories 110-160 — pair with NCIUA Beach Plan", minDwelling: 200, constructionNote: null, maxProtectionClass: null, uwNotes: "Risk must be ≥2,000 ft from saltwater." },
+  { carrierName: "Hartford", countyName: "Currituck",   appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded in territories 110-160 — pair with NCIUA Beach Plan", minDwelling: 200, constructionNote: null, maxProtectionClass: null, uwNotes: "Risk must be ≥2,000 ft from saltwater." },
+  { carrierName: "Hartford", countyName: "Beaufort",    appetiteLevel: "MODERATE", windHailStance: "EXCLUDED", windHailDetail: "Wind excluded in territories 110-160 — pair with NCIUA Beach Plan", minDwelling: 200, constructionNote: null, maxProtectionClass: null, uwNotes: "Risk must be ≥2,000 ft from saltwater." },
 ];
 
 // ──────────────────────────────────────────────────────────
