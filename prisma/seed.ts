@@ -52,9 +52,9 @@ const CARRIERS: Array<{
     maxHomeAge: null,
     maxRoofAge: 10,
     generalUwNotes:
-      "Primary residences only. Max TIV $3M (not Cov A). Writes all coastal counties and territory codes. Metal roofs OK up to 15 yrs, but require 2% wind/hail deductible regardless of location. Within 5 miles of coast: 2% wind/hail deductible.",
+      "Primary residences only. Max TIV $3M (not Cov A). Writes all coastal counties and territory codes. Metal roofs OK up to 15 yrs, but require 2% wind/hail deductible regardless of location. Within 5 miles of coast: 2% wind/hail deductible. Secondary: must be professionally managed",
     writesPrimary: true,
-    writesSecondary: false,
+    writesSecondary: true,
     writesShortTermRental: false,
     writesTenantOccupied: false,
   },
@@ -82,9 +82,9 @@ const CARRIERS: Array<{
     maxDwelling: 1500,
     minDwelling: 80,
     maxHomeAge: 60,
-    maxRoofAge: 20,
+    maxRoofAge: 25,
     generalUwNotes:
-      "50+ yrs requires UW approval. <40 yr wiring, plumbing & heating updates required. Writes 1980s homes and tenant-occupied risks.",
+      " Metal roofs: 40 yr max. 50+ yrs requires UW approval. <40 yr wiring, plumbing & heating updates required. Writes 1980s homes and tenant-occupied risks.",
     writesPrimary: true,
     writesSecondary: true,
     writesShortTermRental: true,
@@ -196,7 +196,7 @@ const CARRIERS: Array<{
     maxHomeAge: 76,
     maxRoofAge: 25,
     generalUwNotes:
-      "Access through Swyfft wholesale broker. Swyfft fronts two products: Vave (primary) and Benchmark Specialty. VAVE: min $125K, built 1950+, primary/secondary/secondary+rentals up to 21 wks/tenant annual. BENCHMARK: min $150K, built within last 100 yrs, primary/secondary only. Roof age cap: asphalt shingles <15 yrs = RCV, hurricane shingles <20 yrs = RCV, standing seam metal <35 yrs = RCV. Roofs older than those thresholds drop to ACV; max roof age 25 yrs. maxHomeAge 76 is based on 2026 (Vave 1950+ cutoff) — bump yearly.",
+      "Secondary homes must have water shut off if unoccupied for more than 20 days. Access through Swyfft wholesale broker. Swyfft fronts two products: Vave (primary) and Benchmark Specialty. VAVE: min $125K, built 1950+, primary/secondary/secondary+rentals up to 21 wks/tenant annual. BENCHMARK: min $150K, built within last 100 yrs, primary/secondary only. Roof age cap: asphalt shingles <15 yrs = RCV, hurricane shingles <20 yrs = RCV, standing seam metal <35 yrs = RCV. Roofs older than those thresholds drop to ACV; max roof age 25 yrs. maxHomeAge 76 is based on 2026 (Vave 1950+ cutoff) — bump yearly.",
     writesPrimary: true,
     writesSecondary: true,
     writesShortTermRental: true,
